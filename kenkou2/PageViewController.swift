@@ -36,10 +36,10 @@ class PageViewController: UIViewController {
         let controller1 = self.storyboard!.instantiateViewController(withIdentifier: "diary") as! dairyViewController
         controllerArray.append(controller1)
         
-        let controller2 = self.storyboard!.instantiateViewController(withIdentifier: "diary") as! dairyViewController
+        let controller2 = self.storyboard!.instantiateViewController(withIdentifier: "hiru") as! diaryViewController2
         controllerArray.append(controller2)
         
-        let controller3 = self.storyboard!.instantiateViewController(withIdentifier: "diary") as! dairyViewController
+        let controller3 = self.storyboard!.instantiateViewController(withIdentifier: "yoru") as! diaryViewController3
         controllerArray.append(controller3)
         
         controller1.title = "朝"

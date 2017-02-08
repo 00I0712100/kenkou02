@@ -15,10 +15,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var goukei: UILabel!
     
-    @IBOutlet weak var asa: UILabel!
-    @IBOutlet weak var hiru: UILabel!
-    @IBOutlet weak var yoru: UILabel!
-
+   
     
     var syokuhins: [String] = []
     var karoris: [String] = []
