@@ -1,0 +1,6 @@
+framework module JBDatePicker {
+  umbrella header "JBDatePicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
