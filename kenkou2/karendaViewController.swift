@@ -8,10 +8,16 @@
 
 import UIKit
 import JBDatePicker
+import Realm
 
 class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     
     @IBOutlet var datePicker: JBDatePickerView!
+    @IBOutlet var writeButton: UIButton!
+
+    
+        
+    var date: String!
     
     lazy var dateFormatter: DateFormatter = {
         var formatter = DateFormatter()
@@ -41,6 +47,43 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         print("date selected: \(dateFormatter.string(from: dayView.date!))")
+         date = dateFormatter.string(from: dayView.date!) //追加
+    }
+    
+    // （中略）
+    
+    @IBAction func saveButtonPushed(_ sender: UIButton) {
+        
+        // STEP.1 Realmを初期化
+        let realm = try! Diary()
+        
+        //STEP.2 保存する要素を書く
+        let diary = Diary()
+        diary.date = date
+        
+        
+        //STEP.3 Realmに書き込み
+        try! realm.write {
+            realm.add(diary)
+        }
+        
+        
+        //画面遷移して前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+
+    
+    @IBAction func writeButtonPushed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "toDiary", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toDiary") {
+            let diaryView = segue.destination as! dairyViewController
+            diaryView.date = self.date
+        }
     }
     
 

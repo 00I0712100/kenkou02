@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,11 +15,13 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var syokujiimage: UIImageView!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var goukei: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
+
    
     
     var syokuhins: [String] = []
     var karoris: [String] = []
+    var date: String!
     
     let imagePickerController = UIImagePickerController()
     
@@ -50,7 +53,22 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if let syoku = saveData.array(forKey: "syokuhins") as? [String] {
             syokuhins = syoku
             
+             dateLabel.text = date
+            
+            DispatchQueue(label: "background").async {
+                let realm = try! realm()
+        
+                if let savedDiary = realm.objects(Diary.self).filter("date == '\(self.date!)'").last {
+                    //                let context = savedDiary.context
+                    //                DispatchQueue.main.async {
+                    //                    self.contextTextView.text = context
+                    //                }
+                }
+            }
+            
         }
+       
+
         
         if let karo = saveData.array(forKey: "karoris") as? [String] {
             karoris = karo
