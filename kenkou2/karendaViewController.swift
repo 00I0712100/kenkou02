@@ -8,7 +8,7 @@
 
 import UIKit
 import JBDatePicker
-import Realm
+import RealmSwift
 
 class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     
@@ -17,7 +17,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
 
     
         
-    var date: String!
+    var date: String = ""
     
     lazy var dateFormatter: DateFormatter = {
         var formatter = DateFormatter()
@@ -55,7 +55,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     @IBAction func saveButtonPushed(_ sender: UIButton) {
         
         // STEP.1 Realmを初期化
-        let realm = try! Diary()
+        let realm = try! Realm()
         
         //STEP.2 保存する要素を書く
         let diary = Diary()

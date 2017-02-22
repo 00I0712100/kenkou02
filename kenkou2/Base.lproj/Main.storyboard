@@ -138,11 +138,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="toDiary" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6W-8f-mDZ">
-                                <rect key="frame" x="164" y="514" width="46" height="30"/>
+                                <rect key="frame" x="170" y="514" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="write"/>
                                 <connections>
+                                    <action selector="writeButtonPushed:" destination="bTl-fA-rh8" eventType="touchUpInside" id="AHL-18-lMH"/>
                                     <segue destination="DHA-VM-jo6" kind="modal" identifier="toDiary" id="cto-Az-b0i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUJ-kz-pEl">
+                                <rect key="frame" x="157" y="477" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveButtonPushed:" destination="bTl-fA-rh8" eventType="touchUpInside" id="RmL-gX-L5Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -150,6 +159,7 @@
                     </view>
                     <connections>
                         <outlet property="datePicker" destination="I1k-CU-bgO" id="K28-aT-MKR"/>
+                        <outlet property="writeButton" destination="M6W-8f-mDZ" id="ZK3-Pt-udb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2u-Mj-gD5" userLabel="First Responder" sceneMemberID="firstResponder"/>

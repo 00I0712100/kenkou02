@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
 class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -15,7 +15,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var syokujiimage: UIImageView!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var goukei: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    //@IBOutlet weak var dateLabel: UILabel!
 
    
     
@@ -30,6 +30,27 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     let viewData = UserDefaults.standard
     
     var karori = 0
+    
+    @IBAction func saveButtonPushed(_ sender: UIButton) {
+        
+        // STEP.1 Realmを初期化
+        let realm = try! Realm()
+        
+        //STEP.2 保存する要素を書く
+        let diary = Diary()
+        diary.date = date
+        
+        
+        //STEP.3 Realmに書き込み
+        try! realm.write {
+            realm.add(diary)
+        }
+        
+        
+        //画面遷移して前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     
     
@@ -53,18 +74,23 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         if let syoku = saveData.array(forKey: "syokuhins") as? [String] {
             syokuhins = syoku
             
-             dateLabel.text = date
+          //  dateLabel.text = date
             
             DispatchQueue(label: "background").async {
-                let realm = try! realm()
-        
-                if let savedDiary = realm.objects(Diary.self).filter("date == '\(self.date!)'").last {
-                    //                let context = savedDiary.context
-                    //                DispatchQueue.main.async {
-                    //                    self.contextTextView.text = context
-                    //                }
+                let realm = try! Realm()
+                
+               
+                if let date = self.date{
+                    if realm.objects(Diary.self).filter("date == '\(date)'").last != nil {
+                        //                let context = savedDiary.context
+                        //                DispatchQueue.main.async {
+                        //                    self.contextTextView.text = context
+                        //                }
+                    }
+
                 }
-            }
+                
+                            }
             
         }
        
