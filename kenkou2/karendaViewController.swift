@@ -10,11 +10,17 @@ import UIKit
 import JBDatePicker
 import RealmSwift
 
-class karendaViewController: UIViewController, JBDatePickerViewDelegate {
+class karendaViewController: UIViewController, JBDatePickerViewDelegate, UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet var datePicker: JBDatePickerView!
     @IBOutlet var writeButton: UIButton!
+    @IBOutlet var hidukelabel: UILabel!
+    @IBOutlet var table02: UITableView!
+    
+    
 
+    var syokuhins: [String] = []
+    var karoris:[String] = []
     
         
     var date: String = ""
@@ -30,6 +36,14 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         super.viewDidLoad()
         
         datePicker.delegate = self
+        
+        let now = Date() // 現在日時の取得
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale! // ロケールの設定
+        dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
+        
+        hidukelabel.text = dateFormatter.string(from: now)
 
         // Do any additional setup after loading the view.
     }
@@ -51,6 +65,24 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     }
     
     // （中略）
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return karoris.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
+        cell.karorilabel.text =  karoris[indexPath.row]
+        cell.syokuhinlabel.text =  syokuhins[indexPath.row]
+        cell.backgroundColor = UIColor.clear
+        
+        print(syokuhins)
+        
+        
+        return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
     
     @IBAction func saveButtonPushed(_ sender: UIButton) {
         
