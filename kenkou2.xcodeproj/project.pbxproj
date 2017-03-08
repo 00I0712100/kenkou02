@@ -35,6 +35,7 @@
 		E5E315711E38BDAC0062CDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E3156F1E38BDAC0062CDF1 /* Main.storyboard */; };
 		E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */; };
 		E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315741E41FC010062CDF1 /* diaryViewController3.swift */; };
+		E5E788FE1E6FE9F70008CEFD /* Syokuji.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */; };
 		E5F9999F1E263C3A00B6516A /* karendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F9999E1E263C3A00B6516A /* karendaViewController.swift */; };
 		EB5A34103489BBE713618E34 /* Pods_kenkou2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4689E7F56508D516F8CCA19 /* Pods_kenkou2Tests.framework */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,7 @@
 		E5E315701E38BDAC0062CDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController2.swift; sourceTree = "<group>"; };
 		E5E315741E41FC010062CDF1 /* diaryViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController3.swift; sourceTree = "<group>"; };
+		E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syokuji.swift; sourceTree = "<group>"; };
 		E5F9999E1E263C3A00B6516A /* karendaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = karendaViewController.swift; sourceTree = "<group>"; };
 		EDE5CD3598A369A29B361DFE /* Pods-kenkou2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kenkou2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kenkou2/Pods-kenkou2.debug.xcconfig"; sourceTree = "<group>"; };
 		F33CCA7FF5A2425E6503DC64 /* Pods-kenkou2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kenkou2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-kenkou2Tests/Pods-kenkou2Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				E5F9999E1E263C3A00B6516A /* karendaViewController.swift */,
 				E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */,
 				E5E315741E41FC010062CDF1 /* diaryViewController3.swift */,
+				E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */,
 				E55CA4F21E0DFA3F0023DFD2 /* ViewController.swift in Sources */,
 				E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */,
+				E5E788FE1E6FE9F70008CEFD /* Syokuji.swift in Sources */,
 				E50654931E0FB14C003B921C /* PageViewController.swift in Sources */,
 				E50654911E0FB098003B921C /* CAPSPageMenu.swift in Sources */,
 				E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */,

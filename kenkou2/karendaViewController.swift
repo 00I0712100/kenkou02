@@ -16,6 +16,12 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate, UITable
     @IBOutlet var writeButton: UIButton!
     @IBOutlet var hidukelabel: UILabel!
     @IBOutlet var table02: UITableView!
+    @IBOutlet var asa: UILabel!
+    @IBOutlet var hiru: UILabel!
+    @IBOutlet var yoru: UILabel!
+    
+    let realm = try! Realm()
+    
     
     
 

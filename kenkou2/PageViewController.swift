@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class PageViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class PageViewController: UIViewController {
     var pageMenu : CAPSPageMenu?
     
     var backColor :UIColor = UIColor.black
+    
+    var  syokuji: Syokuji!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -62,6 +62,13 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
  
     }else{
             
+            let syokuji = Syokuji()
+            syokuji.asa = 100
+            syokuji.hiduke = NSDate()
+            syokuji.hiru = 200
+            syokuji.yoru = 500
+            
+            
             //syokuhinsの配列に、titleTextFieldsyokuhinnを追加
             syokuhins.append(titleTextFieldsyokuhinn.text!)
             karoris.append(titleTextFieldkarori.text!)
@@ -87,7 +94,8 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
                     handler: {action in
                         //self.dismiss(animated: true, completion: nil)
                         let storyboard: UIStoryboard = self.storyboard!
-                        let nextView = storyboard.instantiateViewController(withIdentifier: "nextView")
+                        let nextView = storyboard.instantiateViewController(withIdentifier: "nextView") as! PageViewController
+                        nextView.syokuji = syokuji
                         self.present(nextView, animated: true, completion: nil)
                         NSLog("OKボタンが押されました!")
                         //self.dismiss(animated: true, completion: nil)

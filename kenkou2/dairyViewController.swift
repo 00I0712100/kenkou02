@@ -22,6 +22,8 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     var syokuhins: [String] = []
     var karoris: [String] = []
     var date: String!
+    var  syokuji: Syokuji!
+    
     
     let imagePickerController = UIImagePickerController()
     
@@ -96,14 +98,14 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
        
 
         
-        if let karo = saveData.array(forKey: "karoris") as? [String] {
-            karoris = karo
-            
-            for c in karoris {
-                karori = karori + Int(c)!
-            }
-            goukei.text = String(karori)
-        }
+//        if let karo = saveData.array(forKey: "karoris") as? [String] {
+//            karoris = karo
+//            
+//            for c in karoris {
+//                karori = karori + Int(c)!
+//            }
+//            goukei.text = String(karori)
+//        }
         
         table.reloadData()
         saveData.removeObject(forKey: "syokuhinn")
@@ -200,6 +202,12 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         viewData.set(syokuhins, forKey: "syokuhinmei")
         viewData.set(karoris, forKey: "karosi-su")
         viewData.synchronize()
+        if let syokuji = self.syokuji{
+            let realm = try! Realm()
+            try! realm.write{
+                realm.add(syokuji,update: true)
+            }
+        }
     }
     
 

@@ -458,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSZ-p2-Kkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903.5" y="1338.5"/>
+            <point key="canvasLocation" x="365" y="2050"/>
         </scene>
         <!--Diary View Controller3-->
         <scene sceneID="Cx6-jg-Fho">
@@ -558,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExA-dC-JeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1329.5" y="1338.5"/>
+            <point key="canvasLocation" x="955" y="1969"/>
         </scene>
         <!--Hozonn View Controller-->
         <scene sceneID="zP6-Rh-slq">
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkK-BM-J4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1053" y="583"/>
+            <point key="canvasLocation" x="1026" y="1073"/>
         </scene>
     </scenes>
     <resources>
@@ -633,6 +633,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y2U-fi-0df"/>
+        <segue reference="Y6T-Yq-Nne"/>
     </inferredMetricsTieBreakers>
 </document>
