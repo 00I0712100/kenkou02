@@ -13,6 +13,7 @@
 		E50654931E0FB14C003B921C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50654921E0FB14C003B921C /* PageViewController.swift */; };
 		E50654951E0FB9B6003B921C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50654941E0FB9B6003B921C /* UIColorExtension.swift */; };
 		E50654971E0FBBA5003B921C /* kenkou002.png in Resources */ = {isa = PBXBuildFile; fileRef = E50654961E0FBBA5003B921C /* kenkou002.png */; };
+		E51200B11EDEDE2A00C2185D /* Syokuhin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51200B01EDEDE2A00C2185D /* Syokuhin.swift */; };
 		E55B125A1E0CF8560087A3CF /* kenkou02.png in Resources */ = {isa = PBXBuildFile; fileRef = E55B12591E0CF8560087A3CF /* kenkou02.png */; };
 		E55B125C1E0CFB190087A3CF /* kenkou01.png in Resources */ = {isa = PBXBuildFile; fileRef = E55B125B1E0CFB190087A3CF /* kenkou01.png */; };
 		E55B125E1E0CFDEB0087A3CF /* kenkou04.png in Resources */ = {isa = PBXBuildFile; fileRef = E55B125D1E0CFDEB0087A3CF /* kenkou04.png */; };
@@ -69,6 +70,7 @@
 		E50654921E0FB14C003B921C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E50654941E0FB9B6003B921C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E50654961E0FBBA5003B921C /* kenkou002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou002.png; sourceTree = "<group>"; };
+		E51200B01EDEDE2A00C2185D /* Syokuhin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syokuhin.swift; sourceTree = "<group>"; };
 		E55B12591E0CF8560087A3CF /* kenkou02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kenkou02.png; path = ../../../kenkou02.png; sourceTree = "<group>"; };
 		E55B125B1E0CFB190087A3CF /* kenkou01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kenkou01.png; path = ../../../kenkou01.png; sourceTree = "<group>"; };
 		E55B125D1E0CFDEB0087A3CF /* kenkou04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = kenkou04.png; path = ../../../kenkou04.png; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */,
 				E5E315741E41FC010062CDF1 /* diaryViewController3.swift */,
 				E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */,
+				E51200B01EDEDE2A00C2185D /* Syokuhin.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */,
 				E55CA4F21E0DFA3F0023DFD2 /* ViewController.swift in Sources */,
 				E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */,
+				E51200B11EDEDE2A00C2185D /* Syokuhin.swift in Sources */,
 				E5E788FE1E6FE9F70008CEFD /* Syokuji.swift in Sources */,
 				E50654931E0FB14C003B921C /* PageViewController.swift in Sources */,
 				E50654911E0FB098003B921C /* CAPSPageMenu.swift in Sources */,

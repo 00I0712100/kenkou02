@@ -11,18 +11,23 @@ import RealmSwift
 
 class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
-   
+    
     @IBOutlet weak var syokujiimage: UIImageView!
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var goukei: UILabel!
     //@IBOutlet weak var dateLabel: UILabel!
-
-   
+    
+    
     
     var syokuhins: [String] = []
     var karoris: [String] = []
     var date: String!
-    var  syokuji: Syokuji!
+    var  syokuji = { () -> Results<Syokuji> in
+        
+        let realm = try! Realm()
+        return realm.objects(Syokuji.self)
+        
+    }()
     
     
     let imagePickerController = UIImagePickerController()
@@ -31,22 +36,14 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     let viewData = UserDefaults.standard
     
+    let realm = try! Realm()
+    
+    
     var karori = 0
     
     @IBAction func saveButtonPushed(_ sender: UIButton) {
         
-        // STEP.1 Realmを初期化
-        let realm = try! Realm()
         
-        //STEP.2 保存する要素を書く
-        let diary = Diary()
-        diary.date = date
-        
-        
-        //STEP.3 Realmに書き込み
-        try! realm.write {
-            realm.add(diary)
-        }
         
         
         //画面遷移して前の画面に戻る
@@ -58,7 +55,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
@@ -70,47 +67,24 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        
-        if let syoku = saveData.array(forKey: "syokuhins") as? [String] {
-            syokuhins = syoku
-            
-          //  dateLabel.text = date
-            
-            DispatchQueue(label: "background").async {
-                let realm = try! Realm()
-                
-               
-                if let date = self.date{
-                    if realm.objects(Diary.self).filter("date == '\(date)'").last != nil {
-                        //                let context = savedDiary.context
-                        //                DispatchQueue.main.async {
-                        //                    self.contextTextView.text = context
-                        //                }
-                    }
-
-                }
-                
-                            }
-            
-        }
-       
-
-        
-//        if let karo = saveData.array(forKey: "karoris") as? [String] {
-//            karoris = karo
-//            
-//            for c in karoris {
-//                karori = karori + Int(c)!
-//            }
-//            goukei.text = String(karori)
-//        }
-        
-        table.reloadData()
-        saveData.removeObject(forKey: "syokuhinn")
-        saveData.removeObject(forKey: "karori-")
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "1"{
+            
+            let controller = segue.destination as! hozonnViewController
+            controller.atai = 1
+            
+    }
+            }
+    
+    override func viewWillAppear(_ animated: Bool) {
+            var sum: Int = 0
+            for obj in syokuji{
+                sum = sum + obj.asa
+            }
+            goukei.text = String(sum)
+        
     }
     
     
@@ -141,7 +115,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
             imagePickerController.delegate = self
             imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
             
-           
+            
             self.present(imagePickerController, animated: true, completion: nil)
         } else {
             print("カメラ許可をしていない時の処理")
@@ -170,6 +144,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     
+    
     @IBAction func library() {
         selectFromLibrary()
     }
@@ -180,12 +155,12 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return karoris.count
+        return syokuji.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
-        cell.karorilabel.text =  karoris[indexPath.row]
-        cell.syokuhinlabel.text =  syokuhins[indexPath.row]
+        cell.karorilabel.text =  String(syokuji[indexPath.row].asa)
+        cell.syokuhinlabel.text =  syokuji[indexPath.row].asasyokuhin
         cell.backgroundColor = UIColor.clear
         
         print(syokuhins)
@@ -194,31 +169,22 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       
-    }
-   
-    @IBAction func kanryou(){
-        viewData.set(syokujiimage.image, forKey:"syokuji" )
-        viewData.set(syokuhins, forKey: "syokuhinmei")
-        viewData.set(karoris, forKey: "karosi-su")
-        viewData.synchronize()
-        if let syokuji = self.syokuji{
-            let realm = try! Realm()
-            try! realm.write{
-                realm.add(syokuji,update: true)
-            }
-        }
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func kanryou(){
+        
     }
-    */
-
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

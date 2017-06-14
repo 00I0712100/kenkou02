@@ -1,19 +1,19 @@
 PODS:
-  - JBDatePicker (1.0.3)
-  - Realm (2.1.2):
-    - Realm/Headers (= 2.1.2)
-  - Realm/Headers (2.1.2)
-  - RealmSwift (2.1.2):
-    - Realm (= 2.1.2)
+  - JBDatePicker (1.2.3)
+  - Realm (2.8.1):
+    - Realm/Headers (= 2.8.1)
+  - Realm/Headers (2.8.1)
+  - RealmSwift (2.8.1):
+    - Realm (= 2.8.1)
 
 DEPENDENCIES:
   - JBDatePicker
   - RealmSwift
 
 SPEC CHECKSUMS:
-  JBDatePicker: 4fc68df0feb844be065c68c8f3c6440c5abc7a89
-  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
-  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
+  JBDatePicker: 7130ca86cb2ba1e49d5050b311ba5a14968c18b9
+  Realm: 2627602ad6818451f0cb8c2a6e072f7f10a5f360
+  RealmSwift: 4764ca7657f2193c256fb032c0b123926f70dbcd
 
 PODFILE CHECKSUM: 998de0a80f462679ee9fbbcd19150559f3a19312
 

@@ -56,13 +56,25 @@ public final class JBDatePickerDayView: UIView {
         labelSetup()
         
         if dayInfo.isInMonth {
+            
+            //set default color
             textLabel.textColor = datePickerView.delegate?.colorForDayLabelInMonth
+            
+                //check date is selectable, if not selectable, set colour and don't add gestures
+                guard datePickerView.dateIsSelectable(date: date) else {
+                    self.textLabel.textColor = datePickerView.delegate?.colorForUnavaibleDay
+                    return
+                }
+
         }
         else{
             
             if let shouldShow = datePickerView.delegate?.shouldShowMonthOutDates {
                 if shouldShow {
                     textLabel.textColor = datePickerView.delegate?.colorForDayLabelOutOfMonth
+                    
+                    //check date is selectable, if not selectable, don't add gestures
+                    guard datePickerView.dateIsSelectable(date: date) else {return}
                 }
                 else{
                     self.isUserInteractionEnabled = false
@@ -117,15 +129,47 @@ public final class JBDatePickerDayView: UIView {
 
     }
     
+    private func setupLabelFont() {
+        
+        //get preferred font
+        guard let preferredFont = datePickerView.delegate?.fontForDayLabel else { return }
+        
+        //get preferred size
+        let preferredSize = preferredFont.fontSize
+        let sizeOfFont: CGFloat
+        
+        //calculate fontsize to be used
+        switch preferredSize {
+        case .verySmall: sizeOfFont = min(frame.size.width, frame.size.height) / 3.5
+        case .small: sizeOfFont = min(frame.size.width, frame.size.height) / 3
+        case .medium: sizeOfFont = min(frame.size.width, frame.size.height) / 2.5
+        case .large: sizeOfFont = min(frame.size.width, frame.size.height) / 2
+        case .veryLarge: sizeOfFont = min(frame.size.width, frame.size.height) / 1.5
+        }
+        
+        //get font to be used
+        let fontToUse: UIFont
+        switch preferredFont.fontName.isEmpty {
+        case true:
+            fontToUse = UIFont.systemFont(ofSize: sizeOfFont, weight: UIFontWeightRegular)
+        case false:
+            if let customFont = UIFont(name: preferredFont.fontName, size: sizeOfFont) {
+                fontToUse = customFont
+            }
+            else {
+                print("custom font '\(preferredFont.fontName)' for dayLabel not available. JBDatePicker will use system font instead")
+                fontToUse = UIFont.systemFont(ofSize: sizeOfFont, weight: UIFontWeightRegular)
+            }
+        }
+        
+        textLabel.attributedText = NSMutableAttributedString(string: String(dayInfo.dayValue), attributes:[NSFontAttributeName: fontToUse])
+        
+    }
+    
     public override func layoutSubviews() {
         
         textLabel.frame = bounds
-
-        //calculate size of font
-        let sizeOfFont = (min(frame.size.width, frame.size.height) / 2) - 4
-
-        textLabel.attributedText = NSMutableAttributedString(string: String(dayInfo.dayValue), attributes:[NSFontAttributeName:UIFont.systemFont(ofSize: sizeOfFont, weight: UIFontWeightRegular)])
-
+        setupLabelFont()
     }
     
     
@@ -149,7 +193,7 @@ public final class JBDatePickerDayView: UIView {
             semiSelect(animated: true)
         case .ended:
             if let selView = selectionView {
-                selView.fullFillSelection()
+                selView.removeFromSuperview()
             }
             datePickerView.didTapDayView(dayView: self)
         
@@ -173,8 +217,7 @@ public final class JBDatePickerDayView: UIView {
     
     public func reloadContent() {
         textLabel.frame = bounds
-        let sizeOfFont = (min(frame.size.width, frame.size.height) / 2) - 4
-        textLabel.attributedText = NSMutableAttributedString(string: String(dayInfo.dayValue), attributes:[NSFontAttributeName:UIFont.systemFont(ofSize: sizeOfFont, weight: UIFontWeightRegular)])
+        setupLabelFont()
         
         //reload selectionView
         if let selView = selectionView {
@@ -190,25 +233,20 @@ public final class JBDatePickerDayView: UIView {
     
     func select() {
 
-        if let selectionView = selectionView {
-            insertSubview(selectionView, at: 0)
-        }
-        else {
-            let selView = JBDatePickerSelectionView(dayView: self, frame: self.bounds, isSemiSelected: false)
-            insertSubview(selView, at: 0)
-            
-            selView.translatesAutoresizingMaskIntoConstraints = false
-            
-            //pin selectionView horizontally and make it's width equal to the height of the datePickerview. This way it stays centered while rotating the device.
-            selView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-            selView.widthAnchor.constraint(equalTo: heightAnchor).isActive = true
-            
-            //pint it to the left and right
-            selView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-            selView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-            
-            selectionView = selView
-        }
+        let selView = JBDatePickerSelectionView(dayView: self, frame: self.bounds, isSemiSelected: false)
+        insertSubview(selView, at: 0)
+
+        selView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //pin selectionView horizontally and make it's width equal to the height of the datePickerview. This way it stays centered while rotating the device.
+        selView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        selView.widthAnchor.constraint(equalTo: heightAnchor).isActive = true
+        
+        //pint it to the left and right
+        selView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        selView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        selectionView = selView
         
         //set textcolor to selected state
         textLabel.textColor = datePickerView.delegate?.colorForSelelectedDayLabel

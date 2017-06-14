@@ -13,11 +13,25 @@ class Syokuji: Object {
     
     dynamic var id: Int = 0
     dynamic var hiduke: NSDate = NSDate()
-    dynamic var asa: Int = 0
-    dynamic var hiru: Int = 0
-    dynamic var yoru: Int = 0
+    
+    var asa = List<Syokuhin>()
+    var hiru = List<Syokuhin>()
+    var yoru = List<Syokuhin>()
+   
+    
     
     override static func primaryKey() -> String{
         return "id"
+        
+    }
+    static func lastId() -> Int{
+        let realm = try! Realm()
+        if let syokuji = realm.objects(Syokuji.self).sorted(byProperty: "id", ascending: false).first{
+            return syokuji.id + 1
+            
+        }else{
+            return 1
+        }
     }
 }
+

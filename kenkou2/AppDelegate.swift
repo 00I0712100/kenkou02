@@ -14,12 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let realm = try! Realm()
+ 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "")
         return true
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

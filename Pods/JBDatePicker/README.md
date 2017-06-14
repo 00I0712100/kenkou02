@@ -60,13 +60,12 @@ JBDatePicker can be implemented in your project in two ways:
 * Storyboard setup
 * Manual setup
 
-**Important**: whatever setup you choose, JBDatePicker needs two things to work correctly:
+**Important**: whatever setup you choose, JBDatePicker needs one thing to work correctly:
 + *Your viewController needs to adopt the JBDatePickerDelegate protocol.*
-+ *Your viewController has to override the ‘viewDidLayoutSubviews’ method in which you need to call ‘updateLayout()’ on the JBDatePicker object.*
 
 Besides that, you need to integrate **JBDatePicker** with your project through **CocoaPods**. If you don’t know how to do this, please follow [this tutorial](https://guides.cocoapods.org/using/getting-started.html "CocoaPods Guides - Getting Started"). Alternatively you can use Carthage or drag the JBDatePicker classes into your project manually. 
 
-###Storyboard setup
+### Storyboard setup
 
 Add a UIView to your storyboard, go to the identity inspector and select JBDatePickerView as the custom class for your new view. Next, open the assistant editor and control drag to your viewController to create an outlet like this:
 
@@ -74,13 +73,23 @@ Add a UIView to your storyboard, go to the identity inspector and select JBDateP
 @IBOutlet weak var datePicker: JBDatePickerView!
 ```
 
-Next, make sure you adopt the ‘JBDatePickerViewDelegate’ protocol and set your viewController as the delegate of JBDatePicker, for example in viewDidLoad:
+Next, make sure that you import JBDatePicker and that you adopt the ‘JBDatePickerViewDelegate’ protocol:
+
+```swift
+import JBDatePicker
+
+class ViewController: UIViewController, JBDatePickerViewDelegate {
+ 
+}
+```
+
+Don't forget to set your viewController as the delegate of JBDatePicker, for example in viewDidLoad:
 
 ```swift
 override func viewDidLoad() {
-super.viewDidLoad()
+    super.viewDidLoad()
 
-datePicker.delegate = self
+    datePicker.delegate = self
 }
 ```
 
@@ -90,23 +99,13 @@ Adopting the JBDatePickerViewDelegate protocol requires the implementation of a 
 // MARK: - JBDatePickerViewDelegate implementation
 
 func didSelectDay(_ dayView: JBDatePickerDayView) {
-print("date selected: \(dayView.date)")
-}
-```
-
-Finally, implement the viewDidLayoutSubviews method and call the updateLayout() method:
-
-```swift
-override func viewDidLayoutSubviews() {
-super.viewDidLayoutSubviews()
-
-datePicker.updateLayout()
+    print("date selected: \(String(describing: dayView.date))")
 }
 ```
 
 Running the app should show JBDatePicker and tapping a date should print a statement in the console. If not, double check that you’ve set the delegate and that you called the updateLayout method. If you want to customize the looks of JBDatePicker, keep reading. 
 
-###Manual setup
+### Manual setup
 
 It is also possible to setup JBDatePicker without using Interface Builder. This is a code example: 
 
@@ -116,28 +115,23 @@ class ViewController: UIViewController, JBDatePickerViewDelegate {
 var datePicker: JBDatePickerView!
 
 override func viewDidLoad() {
-super.viewDidLoad()
+    super.viewDidLoad()
 
-let frameForDatePicker = CGRect(x: 0, y: 20, width: view.bounds.width, height: 250)
-datePicker = JBDatePickerView(frame: frameForDatePicker)
-view.addSubview(datePicker)
-datePicker.delegate = self  
+    let frameForDatePicker = CGRect(x: 0, y: 20, width: view.bounds.width, height: 250)
+    datePicker = JBDatePickerView(frame: frameForDatePicker)
+    view.addSubview(datePicker)
+    datePicker.delegate = self  
 }
 
-override func viewDidLayoutSubviews() {
-super.viewDidLayoutSubviews()
-
-datePicker.updateLayout()
-}
 
 // MARK: - JBDatePickerViewDelegate
 
 func didSelectDay(_ dayView: JBDatePickerDayView) {
-print("date selected: \(dayView.date)")
+    print("date selected: \(String(describing: dayView.date))")
 }
 ```
 
-###Delegate functionality
+### Delegate functionality
 
 Besides the only required method, the delegate offers several optional methods and properties to implement:
 
@@ -147,20 +141,42 @@ Is called when the user swiped (or manually moved) to another month
 - parameter monthView: the monthView that is now 'on screen'
 */
 func didPresentOtherMonth(_ monthView: JBDatePickerMonthView) {
-print(“month selected: \(monthView.monthDescription)”)
+    print(“month selected: \(monthView.monthDescription)”)
+}
+
+/**
+Is called to check if any particular date is selectable by the picker
+- parameter date: the date to be checked on selectability 
+*/
+func shouldAllowSelectionOfDay(_ date: Date?) -> Bool {
+
+    //this code example disables selection for dates older then today
+    guard let date = date else {return true}
+    let comparison = NSCalendar.current.compare(date, to: Date().stripped()!, toGranularity: .day)
+
+    if comparison == .orderedAscending {
+        return false
+    }
+    return true
 }
 
 ///Sets the day that determines which month is shown on initial load. Defaults to the current date.
 var dateToShow: Date { return a Date object}
 ```
 
-###Appearance customization
+### Appearance customization
 
 It is possible to customize the appearance of several parts of JBDatePicker by implementing the following optional properties:
 
 ```swift
 ///Sets the first day of the week. Defaults to the local preference.
 var firstWeekDay: JBWeekDay { return .wednesday }
+
+/**
+Customizes the weekday symbols. Defaults to 'shortStandaloneWeekdaySymbols', but any Calendar API value can be used. It is also possible to return a custom string array. 
+- parameter calendar: calendar instance used by the calendar view
+*/
+func weekdaySymbols(for calendar: Calendar) -> [String]
 
 ///Determines if a month should also show the dates of the previous and next month. Defaults to true.
 var shouldShowMonthOutDates: Bool { return false }
@@ -177,31 +193,40 @@ var weekDaysViewHeightRatio: CGFloat { return 0.2 }
 ///Determines the shape that is used to indicate a selected date. Defaults to a circular shape. 
 var selectionShape: JBSelectionShape { return .roundedRect }
 
-///color of any date label text that falls within the presented month
+///Font to be used in dayLabel. Defaults to systemFont of a regular size.
+var fontForDayLabel: JBFont { return JBFont(name: "Avenir", size: .medium) }
+
+///Font to be used in the bar which shows the 'mon' to 'sun' labels (weekdaysView). Defaults to systemFont of a regular size.
+var fontForWeekDaysViewText: JBFont { return JBFont(name: "Avenir", size: .medium) }
+
+///Color of any date label text that falls within the presented month
 var colorForDayLabelInMonth: UIColor { return UIColor of choice }
 
-///color of any date label text that falls out of the presented month and is part of the next or previous (but not presented) month
+///Color of any date label text that falls out of the presented month and is part of the next or previous (but not presented) month
 var colorForDayLabelOutOfMonth: UIColor { return UIColor of choice }
 
-///color of the 'today' date label text
+///Color of any date label text that falls within the presented month but is unavailable because it's selection is now allowed
+var colorForUnavaibleDay: UIColor { return UIColor of choice }
+
+///Color of the 'today' date label text
 var colorForCurrentDay: UIColor { return UIColor of choice }
 
-///color of any label text that is selected
+///Color of any label text that is selected
 var colorForSelelectedDayLabel: UIColor { return UIColor of choice }
 
-///color of the bar which shows the 'mon' to 'sun' labels. Defaults to green. 
+///Color of the bar which shows the 'mon' to 'sun' labels. Defaults to green. 
 var colorForWeekDaysViewBackground: UIColor { return UIColor of choice }
 
-///color of the labels in the WeekdaysView bar that say 'mon' to 'sun'. Defaults to white.
+///Color of the labels in the WeekdaysView bar that say 'mon' to 'sun'. Defaults to white.
 var colorForWeekDaysViewText: UIColor { return UIColor of choice }
 
-///color of the selection circle for dates that aren't today
+///Color of the selection circle for dates that aren't today
 var colorForSelectionCircleForOtherDate: UIColor { return UIColor of choice }
 
-///color of the selection circle for today
+///Color of the selection circle for today
 var colorForSelectionCircleForToday: UIColor { return UIColor of choice }
 
-///color of the semi selected selection circle (that shows on a long press)
+///Color of the semi selected selection circle (that shows on a long press)
 var colorForSemiSelectedSelectionCircle: UIColor { return UIColor of choice }
 ```
 

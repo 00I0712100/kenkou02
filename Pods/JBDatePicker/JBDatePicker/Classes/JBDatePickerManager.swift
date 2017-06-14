@@ -61,7 +61,10 @@ final class JBDatePickerManager {
         components.day! -= 1
         let monthEndDay = calendar.date(from: components)!
         
-        //last day of the previous month
+        //reset components
+        components = calendar.dateComponents([.year, .month, .weekOfMonth], from: date)
+        
+        //last day of the previous month. We have to substract two because we went up to get the next month
         components.month! -= 1
         let previousMonthEndDay = calendar.date(from: components)!
         let previousMonthValue = components.month!

@@ -46,6 +46,7 @@ public final class JBDatePickerView: UIView {
         
         didSet {
             selectedDateView.select()
+            dateToPresent = selectedDateView.date
         }
     }
     
@@ -90,8 +91,7 @@ public final class JBDatePickerView: UIView {
 extension JBDatePickerView {
     
     /**
-     Updates the layout of JBDatePicker. This method must be called within the 'viewDidLayoutSubviews()' method of your viewController in
-     which you use JBDatePicker. This makes sure that elements in JBDatePicker that need a frame, will get their frame.
+     Updates the layout of JBDatePicker. This makes sure that elements in JBDatePicker that need a frame, will get their frame.
      */
     public func updateLayout() {
         
@@ -101,12 +101,19 @@ extension JBDatePickerView {
             return
         }
         
+        guard weekdaysView != nil else { return }
+        
         let width = bounds.size.width
         let availableRectForScrollView = CGRect(x: bounds.origin.x, y: weekdaysView.bounds.height, width: width, height: bounds.size.height - weekdaysView.bounds.height)
 
         //adjust scrollView frame to available space
         contentController.updateScrollViewFrame(availableRectForScrollView)
-        
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
+
+        updateLayout()
     }
 }
 
@@ -124,6 +131,12 @@ extension JBDatePickerView {
         }
 
         return dateFormatter.string(from: date)
+    }
+    
+    func dateIsSelectable(date: Date?) -> Bool {
+
+        //default true, pass check to delegate if exists
+        return delegate?.shouldAllowSelectionOfDay(date) ?? true
     }
     
     ///this will call the delegate as well as set the selectedDate on the datePicker. 

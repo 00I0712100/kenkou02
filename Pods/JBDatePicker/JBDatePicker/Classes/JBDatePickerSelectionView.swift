@@ -23,7 +23,7 @@ class JBDatePickerSelectionView: UIView {
     private var circlePath: CGPath {
         let arcCenter = CGPoint(x: frame.width / 2, y: frame.height / 2)
         let startAngle = CGFloat(0)
-        let endAngle = CGFloat(M_PI * 2.0)
+        let endAngle = CGFloat.pi * 2.0 
         let clockwise = true
         let path = UIBezierPath(arcCenter: arcCenter, radius: radius,
                                 startAngle: startAngle, endAngle: endAngle, clockwise: clockwise).cgPath
@@ -117,16 +117,6 @@ class JBDatePickerSelectionView: UIView {
         shapeLayer().path = selectionPath
     }
     
-    
-    ///This method will change the selection circle fill color from the semi selected color to the correct selected color
-    func fullFillSelection() {
-        
-        //this value will decide what color to draw with 
-        isSemiSelected = false
-        
-        //force redraw
-        self.setNeedsDisplay()
-    }
-    
+
 
 }

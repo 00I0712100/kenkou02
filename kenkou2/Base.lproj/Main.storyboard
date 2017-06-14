@@ -288,7 +288,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="back" id="Y2U-fi-0df"/>
+                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="1" id="Y2U-fi-0df"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="52" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cvp-Ge-udS">
@@ -444,7 +444,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" id="Txo-RT-5V1"/>
+                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="2" id="Txo-RT-5V1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -500,7 +500,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" id="Y6T-Yq-Nne"/>
+                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="3" id="Y6T-Yq-Nne"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiH-ge-jc8">
@@ -633,6 +633,6 @@
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Y6T-Yq-Nne"/>
+        <segue reference="Y2U-fi-0df"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate {
     
@@ -25,6 +26,13 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
     let viewData = UserDefaults.standard
     
     var karori = 0
+    var  syokuji = { () -> Results<Syokuji> in
+        
+        let realm = try! Realm()
+        return realm.objects(Syokuji.self)
+        
+    }()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,26 +43,24 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
 
         // Do any additional setup after loading the view.
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "3"{
+            
+            let controller = segue.destination as! hozonnViewController
+            controller.atai = 3
+            
+        }
+        }
     override func viewWillAppear(_ animated: Bool) {
         
-        if let syoku = saveData.array(forKey: "syokuhins") as? [String] {
-            syokuhins = syoku
-            
+        
+        
+        var sum: Int = 0
+        for obj in syokuji{
+            sum = sum + obj.yoru
         }
-        
-        if let karo = saveData.array(forKey: "karoris") as? [String] {
-            karoris = karo
-            
-            for c in karoris {
-                karori = karori + Int(c)!
-            }
-            goukei.text = String(karori)
-        }
-        
-        table.reloadData()
-        saveData.removeObject(forKey: "syokuhinn")
-        saveData.removeObject(forKey: "karori-")
-        
+        goukei.text = String(sum)
     }
     
     
@@ -123,12 +129,12 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return karoris.count
+        return syokuji.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
-        cell.karorilabel.text =  karoris[indexPath.row]
-        cell.syokuhinlabel.text =  syokuhins[indexPath.row]
+        cell.karorilabel.text =  String(syokuji[indexPath.row].yoru)
+        cell.syokuhinlabel.text =  syokuji[indexPath.row].yorusyokuhin
         cell.backgroundColor = UIColor.clear
         
         print(syokuhins)
@@ -141,11 +147,7 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
     }
     
     @IBAction func kanryou(){
-        viewData.set(syokujiimage.image, forKey:"syokuji" )
-        viewData.set(syokuhins, forKey: "syokuhinmei")
-        viewData.set(karoris, forKey: "karosi-su")
-        viewData.synchronize()
-    }
+           }
     
 
     /*
