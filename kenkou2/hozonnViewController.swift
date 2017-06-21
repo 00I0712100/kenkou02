@@ -70,47 +70,37 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
             
             syokuhin.name = titleTextFieldsyokuhinn.text!
             syokuhin.calory = Int(titleTextFieldkarori.text!)!
-
-        
-//            if let syokuji = realm.objects(Syokuji.self).filter("hiduke >= %@", dayBegin()).filter("hiduke <= %@",dayFinishi()).first{
-//                
-//                try! realm.write{
-//                    
-//                    if atai == 1{
-//                        syokuji.asa = Int(titleTextFieldkarori.text!)!
-//                        syokuji.asasyokuhin = titleTextFieldsyokuhinn.text!
-//                    }else if atai == 2{
-//                        syokuji.hirusyokuhin = titleTextFieldsyokuhinn.text!
-//                        syokuji.hiru = Int(titleTextFieldkarori.text!)!
-//                    }else if atai == 3 {
-//                        syokuji.yorusyokuhin = titleTextFieldsyokuhinn.text!
-//                        syokuji.yoru = Int(titleTextFieldkarori.text!)!
-//                    }
-//                    realm.add(syokuji, update:true)
-//                    
-//                }
-//                self.showAlert(syokuji: syokuji)
-//            }else{
-//                let syokuji = Syokuji()
-//                syokuji.id = Syokuji.lastId()
-//                if atai == 1{
-//                    syokuji.asa = Int(titleTextFieldkarori.text!)!
-//                    syokuji.asasyokuhin = titleTextFieldsyokuhinn.text!
-//                }else if atai == 2{
-//                    syokuji.hirusyokuhin = titleTextFieldsyokuhinn.text!
-//                    syokuji.hiru = Int(titleTextFieldkarori.text!)!
-//                }else if atai == 3 {
-//                    syokuji.yorusyokuhin = titleTextFieldsyokuhinn.text!
-//                    syokuji.yoru = Int(titleTextFieldkarori.text!)!
-//                }
-//                syokuji.hiduke = NSDate()
-//                try! realm.write() {
-//                    realm.add(syokuji)
-//                }
-//                self.showAlert(syokuji: syokuji)
-//            }
-//            
-//            
+            syokuhin.id = Syokuhin.lastId()
+            
+            if let syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first{
+                
+                try! realm.write {
+                    if atai == 1 {
+                        syokuji.asa.append(syokuhin)
+                    }else if atai == 2 {
+                        syokuji.hiru.append(syokuhin)
+                    }else if atai == 3 {
+                        syokuji.yoru.append(syokuhin)
+                    }
+                    realm.add(syokuji, update: true)
+                }
+                self.showAlert(syokuji: syokuji)
+            }else{
+                let syokuji = Syokuji()
+                syokuji.id = Syokuji.lastId()
+                if atai == 1 {
+                    syokuji.asa.append(syokuhin)
+                }else if atai == 2 {
+                    syokuji.hiru.append(syokuhin)
+                }else if atai == 3 {
+                    syokuji.yoru.append(syokuhin)
+                    
+                    try! self.realm .write {
+                        self.realm.add(syokuji)
+                    }
+                    self.showAlert(syokuji: syokuji)
+                }
+            }
         }
         
     }

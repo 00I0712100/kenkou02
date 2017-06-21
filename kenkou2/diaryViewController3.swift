@@ -26,12 +26,45 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
     let viewData = UserDefaults.standard
     
     var karori = 0
-    var  syokuji = { () -> Results<Syokuji> in
+    var  syokuji: Syokuji = { () -> Syokuji in
         
         let realm = try! Realm()
-        return realm.objects(Syokuji.self)
         
+        func dayBegin() -> NSDate {
+            let date = Date()
+            let calendar = Calendar.current
+            let component = calendar.dateComponents([.year, .day, .month], from: date)
+            let year = component.year!
+            let month = String(format: "%02d", component.month!)
+            let day = String(format: "%02d", component.day!)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+            formatter.locale = Locale(identifier: "ja_JP")
+            return formatter.date(from: "\(year)/\(month)/\(day) 00:00:00")! as NSDate
+        }
+        func dayFinishi() -> NSDate {
+            let date = Date()
+            let calendar = Calendar.current
+            let component = calendar.dateComponents([.year, .day, .month], from: date)
+            let year = component.year!
+            let month = String(format: "%02d", component.month!)
+            let day = String(format: "%02d", component.day!)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+            formatter.locale = Locale(identifier: "ja_JP")
+            return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
+        }
+
+        
+        return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first!
+        
+        
+    
     }()
+    
+    
 
 
     override func viewDidLoad() {
@@ -57,8 +90,8 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         
         
         var sum: Int = 0
-        for obj in syokuji{
-            sum = sum + obj.yoru
+        for obj in syokuji.yoru{
+            sum = sum + obj.calory
         }
         goukei.text = String(sum)
     }
@@ -129,12 +162,12 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         // Dispose of any resources that can be recreated.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return syokuji.count
+        return syokuji.yoru.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
-        cell.karorilabel.text =  String(syokuji[indexPath.row].yoru)
-        cell.syokuhinlabel.text =  syokuji[indexPath.row].yorusyokuhin
+        cell.karorilabel.text =  String(syokuji.yoru[indexPath.row].calory)
+        cell.syokuhinlabel.text =  syokuji.yoru[indexPath.row].name
         cell.backgroundColor = UIColor.clear
         
         print(syokuhins)
@@ -150,7 +183,34 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
            }
     
 
-    /*
+    func dayBegin() -> NSDate {
+        let date = Date()
+        let calendar = Calendar.current
+        let component = calendar.dateComponents([.year, .day, .month], from: date)
+        let year = component.year!
+        let month = String(format: "%02d", component.month!)
+        let day = String(format: "%02d", component.day!)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.date(from: "\(year)/\(month)/\(day) 00:00:00")! as NSDate
+    }
+    func dayFinishi() -> NSDate {
+        let date = Date()
+        let calendar = Calendar.current
+        let component = calendar.dateComponents([.year, .day, .month], from: date)
+        let year = component.year!
+        let month = String(format: "%02d", component.month!)
+        let day = String(format: "%02d", component.day!)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
+    }
+
+       /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
