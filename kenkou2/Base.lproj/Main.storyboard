@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="AUx-uc-HXv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="AUx-uc-HXv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -268,7 +268,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yc-Ek-i3k">
-                                <rect key="frame" x="228" y="489" width="107" height="41"/>
+                                <rect key="frame" x="186" y="489" width="149" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.45098039215686275" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
@@ -302,7 +302,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ga1-ns-P7w" id="rJg-ys-cKh">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="51"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="52"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -358,7 +358,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbM-yJ-qYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="1313"/>
+            <point key="canvasLocation" x="364.5" y="1312.5"/>
         </scene>
         <!--Diary View Controller2-->
         <scene sceneID="b4W-ml-959">
@@ -389,7 +389,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Vw-bk-oSv" id="l0F-YB-ZEt">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -424,8 +424,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-Lz-oLE">
-                                <rect key="frame" x="298" y="499" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-Lz-oLE">
+                                <rect key="frame" x="215" y="499" width="125" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -458,7 +458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSZ-p2-Kkp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="365" y="2050"/>
+            <point key="canvasLocation" x="364.5" y="2049.5"/>
         </scene>
         <!--Diary View Controller3-->
         <scene sceneID="Cx6-jg-Fho">
@@ -489,7 +489,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDk-2L-hXS" id="Ira-xV-xEa">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -532,8 +532,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTg-7O-Cea">
-                                <rect key="frame" x="289" y="499" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTg-7O-Cea">
+                                <rect key="frame" x="170" y="499" width="161" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -558,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExA-dC-JeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="1969"/>
+            <point key="canvasLocation" x="954.5" y="1968.5"/>
         </scene>
         <!--Hozonn View Controller-->
         <scene sceneID="zP6-Rh-slq">

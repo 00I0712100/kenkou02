@@ -95,11 +95,17 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
                 }else if atai == 3 {
                     syokuji.yoru.append(syokuhin)
                     
-                    try! self.realm .write {
-                        self.realm.add(syokuji)
-                    }
-                    self.showAlert(syokuji: syokuji)
                 }
+                
+                
+                
+                
+                try! self.realm .write {
+                    self.realm.add(syokuji)
+                }
+                
+                self.showAlert(syokuji: syokuji)
+                
             }
         }
         

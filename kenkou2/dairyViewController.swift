@@ -53,7 +53,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
             return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
         }
 
-        return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first!
+        return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first ?? Syokuji()
         
     }()
     
@@ -160,16 +160,26 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        syokujiimage.image = image
-        
-        self.dismiss(animated: true, completion: {
-            //self.performSegue(withIdentifier: "back", sender: nil)
-            self.dismiss(animated: true, completion: nil)
-            
-        })
+                syokujiimage.image = image
+               self.dismiss(animated: true, completion: {
+                   self.performSegue(withIdentifier: "back", sender: nil)
+                   self.dismiss(animated: true, completion: nil)
+                
+               })
     }
+    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+//        syokujiimage.image = image
+//        
+//        self.dismiss(animated: true, completion: {
+//            //self.performSegue(withIdentifier: "back", sender: nil)
+//            self.dismiss(animated: true, completion: nil)
+//            
+//        })
+//    }
     
     
     
@@ -186,7 +196,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return syokuji.asa.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
+        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: (indexPath ) )!
         cell.karorilabel.text =  String(syokuji.asa[indexPath.row].calory)
         cell.syokuhinlabel.text =  syokuji.asa[indexPath.row].name
         cell.backgroundColor = UIColor.clear

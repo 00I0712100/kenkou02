@@ -15,7 +15,7 @@ extension UITableView {
         register(nib, forCellReuseIdentifier: type.className)
     }
     
-    func dequeueCell<T: UITableViewCell>(type: T.Type, indexPath: NSIndexPath) -> T? {
+    func dequeueCell<T: UITableViewCell>(type: T.Type, indexPath: IndexPath) -> T? {
         return dequeueReusableCell(withIdentifier: type.className, for: indexPath as IndexPath) as? T
     }
     

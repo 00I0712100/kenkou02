@@ -24,8 +24,8 @@ class Syokuhin: Object {
     }
     static func lastId() -> Int{
         let realm = try! Realm()
-        if let syokuji = realm.objects(Syokuji.self).sorted(byProperty: "id", ascending: false).first{
-            return syokuji.id + 1
+        if let syokuhin = realm.objects(Syokuhin.self).sorted(byKeyPath: "id", ascending: false).first{
+            return syokuhin.id + 1
             
         }else{
             return 1

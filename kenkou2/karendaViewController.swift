@@ -10,7 +10,7 @@ import UIKit
 import JBDatePicker
 import RealmSwift
 
-class karendaViewController: UIViewController, JBDatePickerViewDelegate, UITableViewDelegate,UITableViewDataSource {
+class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     
     @IBOutlet var datePicker: JBDatePickerView!
     @IBOutlet var writeButton: UIButton!
@@ -23,6 +23,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate, UITable
     let realm = try! Realm()
     
     
+    var syokuji: Syokuji?
     
 
     var syokuhins: [String] = []
@@ -67,27 +68,43 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate, UITable
     
     func didSelectDay(_ dayView: JBDatePickerDayView) {
         print("date selected: \(dateFormatter.string(from: dayView.date!))")
-         date = dateFormatter.string(from: dayView.date!) //追加
+        date = dateFormatter.string(from: dayView.date!) //追加
+        
+
+        syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin(date: dayView.date!)).filter("hiduke <=%d" , dayFinishi(date: dayView.date!)).first
+        
+        print(syokuji)
+        
+    }
+    func dayBegin(date: Date) -> NSDate {
+        let calendar = Calendar.current
+        let component = calendar.dateComponents([.year, .day, .month], from: date)
+        let year = component.year!
+        let month = String(format: "%02d", component.month!)
+        let day = String(format: "%02d", component.day!)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.date(from: "\(year)/\(month)/\(day) 00:00:00")! as NSDate
     }
     
+    func dayFinishi(date: Date) -> NSDate {
+        let calendar = Calendar.current
+        let component = calendar.dateComponents([.year, .day, .month], from: date)
+        let year = component.year!
+        let month = String(format: "%02d", component.month!)
+        let day = String(format: "%02d", component.day!)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+        formatter.locale = Locale(identifier: "ja_JP")
+        return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
+    }
+
+    
+    
     // （中略）
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return karoris.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
-        cell.karorilabel.text =  karoris[indexPath.row]
-        cell.syokuhinlabel.text =  syokuhins[indexPath.row]
-        cell.backgroundColor = UIColor.clear
-        
-        print(syokuhins)
-        
-        
-        return cell
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
     
     
     @IBAction func saveButtonPushed(_ sender: UIButton) {

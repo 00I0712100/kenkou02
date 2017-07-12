@@ -58,7 +58,7 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         }
 
         
-        return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first!
+        return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first ?? Syokuji()
         
         
     
@@ -165,7 +165,7 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         return syokuji.yoru.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: indexPath as NSIndexPath)!
+        let cell = tableView.dequeueCell(type: hozonnCell.self, indexPath: (indexPath ))!
         cell.karorilabel.text =  String(syokuji.yoru[indexPath.row].calory)
         cell.syokuhinlabel.text =  syokuji.yoru[indexPath.row].name
         cell.backgroundColor = UIColor.clear
