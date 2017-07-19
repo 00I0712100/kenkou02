@@ -82,6 +82,20 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         let year = component.year!
         let month = String(format: "%02d", component.month!)
         let day = String(format: "%02d", component.day!)
+        let asaKarori = syokuji?.asa.reduce(1) { (result, syokuhin) -> Int in
+            return result + syokuhin.calory
+        }
+        asa.text = String(describing: asaKarori)
+        
+        let hiruKarori = syokuji?.hiru.reduce(2){ (Result, Syokuhin) -> Int in
+            return Result + Syokuhin.calory
+        }
+        hiru.text = String(describing: hiruKarori)
+        let yoruKarori = syokuji?.yoru.reduce(3){ (Result, Syokuhin) -> Int in
+            return Result + Syokuhin.calory
+        }
+        yoru.text = String(describing: yoruKarori)
+        
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
@@ -95,6 +109,19 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         let year = component.year!
         let month = String(format: "%02d", component.month!)
         let day = String(format: "%02d", component.day!)
+        let asaKarori = syokuji?.asa.reduce(1) { (result, syokuhin) -> Int in
+            return result + syokuhin.calory
+        }
+        asa.text = String(describing: asaKarori)
+        let hiruKarori = syokuji?.hiru.reduce(2){ (Result, Syokuhin) -> Int in
+            return Result + Syokuhin.calory
+        }
+        hiru.text = String(describing: hiruKarori)
+        let yoruKarori = syokuji?.yoru.reduce(3){ (Result, Syokuhin) -> Int in
+            return Result + Syokuhin.calory
+        }
+        yoru.text = String(describing: yoruKarori)
+
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
