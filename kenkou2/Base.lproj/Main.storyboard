@@ -117,6 +117,9 @@
                                 <rect key="frame" x="127" y="577" width="120" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="入力"/>
+                                <connections>
+                                    <segue destination="joN-Sh-xll" kind="modal" id="y61-Vc-ygL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -224,6 +227,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="XqM-Xw-2KO" id="a3Y-Qd-ed3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qjq-v7-2By" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

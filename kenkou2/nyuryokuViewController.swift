@@ -36,6 +36,27 @@ class nyuryokuViewController: UIViewController {
         number1 = number1*10 + 1
         label.text = String(number1)
     }
+    @IBAction func num2(){
+        number1 = number1*10 + 2
+        label.text = String(number1)
+    }
+    @IBAction func num3(){
+        number1 = number1*10 + 3
+        label.text = String(number1)
+    }
+    @IBAction func num4(){
+        number1 = number1*10 + 4
+        label.text = String(number1)
+    }
+    @IBAction func num5(){
+        number1 = number1*10 + 5
+        label.text = String(number1)
+    }
+    @IBAction func num6(){
+        number1 = number1*10 + 6
+        label.text = String(number1)
+    }
+    
 
     /*
     // MARK: - Navigation
