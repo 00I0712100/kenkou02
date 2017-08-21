@@ -12,17 +12,25 @@ class nyuryokuViewController: UIViewController {
     
     
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label2: UILabel!
     
-    var number1: Int = 0
-    var number2: Int = 0
-    var number3: Int = 0
-    var number4: Int = 0
-
+    
+    
+    var numString = ""
+    
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let now = Date() // 現在日時の取得
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale! // ロケールの設定
+        dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
+        
+        label2.text = dateFormatter.string(from: now)
 
         // Do any additional setup after loading the view.
     }
@@ -32,31 +40,58 @@ class nyuryokuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+   
+    
     @IBAction func num1(){
-        number1 = number1*10 + 1
-        label.text = String(number1)
+        numString += "1"
+        label.text = numString
     }
     @IBAction func num2(){
-        number1 = number1*10 + 2
-        label.text = String(number1)
+        numString += "2"
+        label.text = numString
     }
     @IBAction func num3(){
-        number1 = number1*10 + 3
-        label.text = String(number1)
+        numString += "3"
+        label.text = numString
     }
     @IBAction func num4(){
-        number1 = number1*10 + 4
-        label.text = String(number1)
+        numString += "4"
+        label.text = numString
     }
     @IBAction func num5(){
-        number1 = number1*10 + 5
-        label.text = String(number1)
+        numString += "5"
+        label.text = numString
     }
     @IBAction func num6(){
-        number1 = number1*10 + 6
-        label.text = String(number1)
+        numString += "6"
+        label.text = numString
     }
-    
+    @IBAction func num7(){
+        numString += "7"
+        label.text = numString    }
+    @IBAction func num8(){
+        numString += "8"
+        label.text = numString
+    }
+    @IBAction func num9(){
+        numString += "9"
+        label.text = numString
+    }
+    @IBAction func num0(){
+        numString += "0"
+        label.text = numString    }
+    @IBAction func dot(){
+        numString += "."
+        label.text = numString    }
+    @IBAction func clear(){
+        numString = ""
+        label.text = numString
+    }
+    @IBAction func ok(){
+        
+        //画面遷移して前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
