@@ -79,7 +79,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
-    
+   
     
     
     

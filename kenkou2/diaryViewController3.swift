@@ -209,6 +209,16 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
     }
+    
+    @IBAction func saveButtonPushed(_ sender: UIButton) {
+        
+        
+        
+        
+        //画面遷移して前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+        
+    }
 
        /*
     // MARK: - Navigation

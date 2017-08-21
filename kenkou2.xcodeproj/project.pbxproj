@@ -20,6 +20,7 @@
 		E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */; };
 		E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */; };
 		E55CA4F21E0DFA3F0023DFD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4F11E0DFA3F0023DFD2 /* ViewController.swift */; };
+		E56A59B61F4A79D300AA731E /* nyuryokuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */; };
 		E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57EE9F41E264DA000A83C8B /* Diary.swift */; };
 		E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211181DDC69CC00AE95F5 /* AppDelegate.swift */; };
 		E582111B1DDC69CC00AE95F5 /* hosuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582111A1DDC69CC00AE95F5 /* hosuViewController.swift */; };
@@ -77,6 +78,7 @@
 		E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dairyViewController.swift; sourceTree = "<group>"; };
 		E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnViewController.swift; sourceTree = "<group>"; };
 		E55CA4F11E0DFA3F0023DFD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nyuryokuViewController.swift; sourceTree = "<group>"; };
 		E57EE9F41E264DA000A83C8B /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		E58211151DDC69CC00AE95F5 /* kenkou2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kenkou2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58211181DDC69CC00AE95F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				E5E315741E41FC010062CDF1 /* diaryViewController3.swift */,
 				E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */,
 				E51200B01EDEDE2A00C2185D /* Syokuhin.swift */,
+				E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */,
 				E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */,
 				E5F9999F1E263C3A00B6516A /* karendaViewController.swift in Sources */,
+				E56A59B61F4A79D300AA731E /* nyuryokuViewController.swift in Sources */,
 				E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */,
 				E50654951E0FB9B6003B921C /* UIColorExtension.swift in Sources */,
 			);
@@ -692,6 +696,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.kenkou2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -706,6 +711,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.litech.kenkou2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos10.3;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

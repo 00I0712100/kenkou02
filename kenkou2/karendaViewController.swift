@@ -82,18 +82,19 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         let year = component.year!
         let month = String(format: "%02d", component.month!)
         let day = String(format: "%02d", component.day!)
-        let asaKarori = syokuji?.asa.reduce(1) { (result, syokuhin) -> Int in
+        
+        let asaKarori: Int = syokuji?.asa.reduce(0) { (result, syokuhin) -> Int in
             return result + syokuhin.calory
-        }
+        } ?? 0
         asa.text = String(describing: asaKarori)
         
-        let hiruKarori = syokuji?.hiru.reduce(2){ (Result, Syokuhin) -> Int in
+        let hiruKarori: Int = syokuji?.hiru.reduce(0){ (Result, Syokuhin) -> Int in
             return Result + Syokuhin.calory
-        }
+        } ?? 0
         hiru.text = String(describing: hiruKarori)
-        let yoruKarori = syokuji?.yoru.reduce(3){ (Result, Syokuhin) -> Int in
+        let yoruKarori: Int = syokuji?.yoru.reduce(0){ (Result, Syokuhin) -> Int in
             return Result + Syokuhin.calory
-        }
+        } ?? 0
         yoru.text = String(describing: yoruKarori)
         
         
@@ -109,17 +110,17 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         let year = component.year!
         let month = String(format: "%02d", component.month!)
         let day = String(format: "%02d", component.day!)
-        let asaKarori = syokuji?.asa.reduce(1) { (result, syokuhin) -> Int in
+        let asaKarori: Int = syokuji?.asa.reduce(0) { (result, syokuhin) -> Int in
             return result + syokuhin.calory
-        }
+        } ?? 0
         asa.text = String(describing: asaKarori)
-        let hiruKarori = syokuji?.hiru.reduce(2){ (Result, Syokuhin) -> Int in
+        let hiruKarori: Int = syokuji?.hiru.reduce(0){ (Result, Syokuhin) -> Int in
             return Result + Syokuhin.calory
-        }
+        } ?? 0
         hiru.text = String(describing: hiruKarori)
-        let yoruKarori = syokuji?.yoru.reduce(3){ (Result, Syokuhin) -> Int in
+        let yoruKarori: Int = syokuji?.yoru.reduce(0){ (Result, Syokuhin) -> Int in
             return Result + Syokuhin.calory
-        }
+        } ?? 0
         yoru.text = String(describing: yoruKarori)
 
         

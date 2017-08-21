@@ -178,7 +178,15 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
     
     @IBAction func kanryou(){
     }
-    
+    @IBAction func saveButtonPushed(_ sender: UIButton) {
+        
+        
+        
+        
+        //画面遷移して前の画面に戻る
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
     
     /*
