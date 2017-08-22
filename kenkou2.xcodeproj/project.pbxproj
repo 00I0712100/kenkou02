@@ -21,6 +21,8 @@
 		E56A59B91F4A84BF00AA731E /* kenkou02.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59B71F4A84BF00AA731E /* kenkou02.png */; };
 		E56A59BA1F4A84BF00AA731E /* kenkou04.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59B81F4A84BF00AA731E /* kenkou04.png */; };
 		E56A59BC1F4A84DD00AA731E /* kenkou01.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59BB1F4A84DD00AA731E /* kenkou01.png */; };
+		E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */; };
+		E56A59C01F4BCEA600AA731E /* graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59BF1F4BCEA600AA731E /* graph.swift */; };
 		E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57EE9F41E264DA000A83C8B /* Diary.swift */; };
 		E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211181DDC69CC00AE95F5 /* AppDelegate.swift */; };
 		E582111B1DDC69CC00AE95F5 /* hosuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582111A1DDC69CC00AE95F5 /* hosuViewController.swift */; };
@@ -79,6 +81,8 @@
 		E56A59B71F4A84BF00AA731E /* kenkou02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou02.png; sourceTree = "<group>"; };
 		E56A59B81F4A84BF00AA731E /* kenkou04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou04.png; sourceTree = "<group>"; };
 		E56A59BB1F4A84DD00AA731E /* kenkou01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou01.png; sourceTree = "<group>"; };
+		E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tameshiViewController.swift; sourceTree = "<group>"; };
+		E56A59BF1F4BCEA600AA731E /* graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph.swift; sourceTree = "<group>"; };
 		E57EE9F41E264DA000A83C8B /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		E58211151DDC69CC00AE95F5 /* kenkou2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kenkou2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E58211181DDC69CC00AE95F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */,
 				E51200B01EDEDE2A00C2185D /* Syokuhin.swift */,
 				E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */,
+				E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */,
+				E56A59BF1F4BCEA600AA731E /* graph.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -529,11 +535,13 @@
 				E5E788FE1E6FE9F70008CEFD /* Syokuji.swift in Sources */,
 				E50654931E0FB14C003B921C /* PageViewController.swift in Sources */,
 				E50654911E0FB098003B921C /* CAPSPageMenu.swift in Sources */,
+				E56A59C01F4BCEA600AA731E /* graph.swift in Sources */,
 				E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */,
 				E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */,
 				E582114A1DDC6FA700AE95F5 /* gurafuViewController.swift in Sources */,
 				E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */,
 				E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */,
+				E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */,
 				E582111B1DDC69CC00AE95F5 /* hosuViewController.swift in Sources */,
 				E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */,
 				E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */,

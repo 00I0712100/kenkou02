@@ -49,6 +49,41 @@
             </objects>
             <point key="canvasLocation" x="563" y="129"/>
         </scene>
+        <!--Tameshi View Controller-->
+        <scene sceneID="gac-X4-T5p">
+            <objects>
+                <viewController id="fhM-H4-clE" customClass="tameshiViewController" customModule="kenkou2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QAx-Vy-5zy"/>
+                        <viewControllerLayoutGuide type="bottom" id="5xw-5E-P7F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="01u-VN-BXm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F8j-5J-Lek">
+                                <rect key="frame" x="0.0" y="91" width="375" height="556"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPe-6f-6II">
+                                <rect key="frame" x="135" y="28" width="104" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="hiniti" destination="hPe-6f-6II" id="DY9-uu-0AV"/>
+                        <outlet property="scview" destination="F8j-5J-Lek" id="pxa-Lb-iOL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n9d-oQ-cjp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49.5" y="-806.5"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="VeS-pC-5zr">
             <objects>
@@ -93,13 +128,21 @@
                                     <segue destination="bTl-fA-rh8" kind="modal" id="NCI-gp-2Kq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZU0-wp-6Bq">
+                                <rect key="frame" x="140" y="74" width="94" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="fhM-H4-clE" kind="modal" id="F1C-5j-AuO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vfe-e2-Po6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34" y="111"/>
+            <point key="canvasLocation" x="33.5" y="110.5"/>
         </scene>
         <!--Gurafu View Controller-->
         <scene sceneID="40T-Ut-068">
