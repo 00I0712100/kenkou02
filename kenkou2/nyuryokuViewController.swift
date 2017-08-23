@@ -17,6 +17,8 @@ class nyuryokuViewController: UIViewController {
     
     
     var numString = ""
+//    let userDefaults = UserDefaults.standard
+
     
     
     
@@ -31,6 +33,20 @@ class nyuryokuViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
         
         label2.text = dateFormatter.string(from: now)
+        
+        
+//        userDefaults.set("", forKey: "Key")
+//        
+//        userDefaults.string(forKey: "Key")
+//        
+//        userDefaults.removeObject(forKey: "Key")
+//        if (userDefaults.object(forKey: "Key") != nil) {
+//            print("データ有り")
+//        }
+//        userDefaults.register(defaults: ["Key": "default"])
+//        
+//        userDefaults.synchronize()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -91,6 +107,24 @@ class nyuryokuViewController: UIViewController {
         
         //画面遷移して前の画面に戻る
         self.dismiss(animated: true, completion: nil)
+        
+        
+        let userDefaults = UserDefaults.standard
+
+        
+        userDefaults.set(Double(numString), forKey: "ccurrentValue")
+        userDefaults.set(String(now), forKey: "ccurrentValue")
+        
+        userDefaults.double(forKey: "currentValue")
+        
+//        userDefaults.removeObject(forKey: "currentValue")
+//        if (userDefaults.object(forKey: "currentValue") != nil) {
+//            print("データ有り")
+//        }
+//        userDefaults.register(defaults: ["currentValue": "default"])
+//        
+//        userDefaults.synchronize()
+
     }
 
     /*

@@ -12,6 +12,8 @@ class tameshiViewController: UIViewController {
     
     @IBOutlet weak var scview: UIScrollView! //storyboardでスクロールビューを配置しているので接続
     @IBOutlet weak var hiniti: UILabel!
+    @IBOutlet weak var bmi: UILabel!
+    
 
 
     override func viewDidLoad() {

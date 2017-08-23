@@ -31,7 +31,6 @@
 		E582112E1DDC69CD00AE95F5 /* kenkou2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582112D1DDC69CD00AE95F5 /* kenkou2Tests.swift */; };
 		E58211391DDC69CD00AE95F5 /* kenkou2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211381DDC69CD00AE95F5 /* kenkou2UITests.swift */; };
 		E58211481DDC6A0C00AE95F5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */; };
-		E582114A1DDC6FA700AE95F5 /* gurafuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211491DDC6FA700AE95F5 /* gurafuViewController.swift */; };
 		E5BA4D4A1E0E4DAB0068565F /* hozonnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */; };
 		E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */; };
 		E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4D1E0E532F0068565F /* UITableView+.swift */; };
@@ -97,7 +96,6 @@
 		E58211381DDC69CD00AE95F5 /* kenkou2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kenkou2UITests.swift; sourceTree = "<group>"; };
 		E582113A1DDC69CD00AE95F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		E58211491DDC6FA700AE95F5 /* gurafuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gurafuViewController.swift; sourceTree = "<group>"; };
 		E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hozonnCell.xib; sourceTree = "<group>"; };
 		E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnCell.swift; sourceTree = "<group>"; };
 		E5BA4D4D1E0E532F0068565F /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+.swift"; path = "../UITableView+.swift"; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				E582111F1DDC69CC00AE95F5 /* Assets.xcassets */,
 				E58211211DDC69CC00AE95F5 /* LaunchScreen.storyboard */,
 				E58211241DDC69CC00AE95F5 /* Info.plist */,
-				E58211491DDC6FA700AE95F5 /* gurafuViewController.swift */,
 				E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */,
 				E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */,
 				E55CA4F11E0DFA3F0023DFD2 /* ViewController.swift */,
@@ -538,7 +535,6 @@
 				E56A59C01F4BCEA600AA731E /* graph.swift in Sources */,
 				E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */,
 				E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */,
-				E582114A1DDC6FA700AE95F5 /* gurafuViewController.swift in Sources */,
 				E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */,
 				E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */,
 				E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */,
