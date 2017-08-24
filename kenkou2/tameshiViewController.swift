@@ -31,6 +31,8 @@ class tameshiViewController: UIViewController {
         
         hiniti.text = dateFormatter.string(from: now)
         
+        scview.showsVerticalScrollIndicator = false
+        scview.showsHorizontalScrollIndicator = false
 //        let realm = try! Realm()
 //        let nyuryokuDateArray: [Nyuryoku] = Array(realm.objects(Nyuryoku.self))
 //        
@@ -70,7 +72,7 @@ class tameshiViewController: UIViewController {
         scview.addSubview(graphview) //グラフをスクロールビューに配置
         graphview.drawLineGraph() //グラフ描画開始
         
-        scview.contentSize = CGSize(width:graphview.checkWidth()+20, height:graphview.checkHeight()) //スクロールビュー内のコンテンツサイズ設定
+        scview.contentSize = CGSize(width:graphview.checkWidth(), height:graphview.checkHeight()) //スクロールビュー内のコンテンツサイズ設定
 
         
     }
