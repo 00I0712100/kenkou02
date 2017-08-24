@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class nyuryokuViewController: UIViewController {
     
@@ -106,16 +107,22 @@ class nyuryokuViewController: UIViewController {
     @IBAction func ok(){
         
         //画面遷移して前の画面に戻る
-        self.dismiss(animated: true, completion: nil)
+        let realm = try! Realm()
+        let nyuryoku = nyuryoku()
+        
+        nyuryoku.atai = Double(numString)!
+        try! realm.write {
+            realm.add(nyuryoku)
+        }
         
         
-        let userDefaults = UserDefaults.standard
-
-        
-        userDefaults.set(Double(numString), forKey: "ccurrentValue")
-        userDefaults.set(String(now), forKey: "ccurrentValue")
-        
-        userDefaults.double(forKey: "currentValue")
+//        let userDefaults = UserDefaults.standard
+//
+//        
+//        userDefaults.set(Double(numString), forKey: "ccurrentValue")
+//        userDefaults.set(String(now), forKey: "ccurrentValue")
+//        
+//        userDefaults.double(forKey: "currentValue")
         
 //        userDefaults.removeObject(forKey: "currentValue")
 //        if (userDefaults.object(forKey: "currentValue") != nil) {

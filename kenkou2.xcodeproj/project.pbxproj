@@ -13,6 +13,7 @@
 		E50654931E0FB14C003B921C /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50654921E0FB14C003B921C /* PageViewController.swift */; };
 		E50654951E0FB9B6003B921C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50654941E0FB9B6003B921C /* UIColorExtension.swift */; };
 		E50654971E0FBBA5003B921C /* kenkou002.png in Resources */ = {isa = PBXBuildFile; fileRef = E50654961E0FBBA5003B921C /* kenkou002.png */; };
+		E50CA2571F4E6F240084D5A3 /* nyuryoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */; };
 		E51200B11EDEDE2A00C2185D /* Syokuhin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51200B01EDEDE2A00C2185D /* Syokuhin.swift */; };
 		E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */; };
 		E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */; };
@@ -72,6 +73,7 @@
 		E50654921E0FB14C003B921C /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		E50654941E0FB9B6003B921C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		E50654961E0FBBA5003B921C /* kenkou002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou002.png; sourceTree = "<group>"; };
+		E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nyuryoku.swift; sourceTree = "<group>"; };
 		E51200B01EDEDE2A00C2185D /* Syokuhin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syokuhin.swift; sourceTree = "<group>"; };
 		E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dairyViewController.swift; sourceTree = "<group>"; };
 		E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */,
 				E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */,
 				E56A59BF1F4BCEA600AA731E /* graph.swift */,
+				E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */,
 				E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */,
 				E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */,
+				E50CA2571F4E6F240084D5A3 /* nyuryoku.swift in Sources */,
 				E582111B1DDC69CC00AE95F5 /* hosuViewController.swift in Sources */,
 				E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */,
 				E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */,

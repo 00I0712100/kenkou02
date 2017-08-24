@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class tameshiViewController: UIViewController {
     
@@ -15,6 +16,7 @@ class tameshiViewController: UIViewController {
     @IBOutlet weak var bmi: UILabel!
     
 
+       //nyuryoku = Nyuryoku()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +29,17 @@ class tameshiViewController: UIViewController {
         dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
         
         hiniti.text = dateFormatter.string(from: now)
+        
+        let originGraphPoints = ["2017/8/24", "", "", "", ""]
+        let originGraphDatas = [10, 50, -30,425,-60]
+        var d: [Dictionary<String, AnyObject>] = []
+        
+        for i in 0 ..< originGraphPoints.count{
+            let dict = ["date": originGraphPoints[i], "value":originGraphDatas[i] as [String: AnyObject]]
+            d.append(dict)
+        }
        
-        let graphview = Graph() //グラフを表示するクラス
+        let graphview = Graph(frame: scview.frame, dictArray: d) //グラフを表示するクラス
         scview.addSubview(graphview) //グラフをスクロールビューに配置
         graphview.drawLineGraph() //グラフ描画開始
         
@@ -36,6 +47,12 @@ class tameshiViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        let realm = try! Realm()
+//        
+//    }
     
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Graph: UIView {
     
@@ -18,35 +19,62 @@ class Graph: UIView {
     var circleColor:UIColor = UIColor(red:0.088,  green:0.501,  blue:0.979, alpha:1) //円の色
     var circleColor2: UIColor = UIColor.white
     
+    var graphDict: [String: AnyObject] = [:]
+    
+    let nyuryoku = Nyuryoky()
+
+    
     
     var memoriMargin: CGFloat = 70 //横目盛の感覚
     var graphHeight: CGFloat = 400 //グラフの高さ
     var graphPoints: [String] = []
     var graphDatas: [CGFloat] = []
     
-    let userDefaults = UserDefaults.standard
-    
-    override init(frame: CGRect) {
+    init(frame: CGRect, dictArray: [Dictionary<String, AnyObject>]) {
         super.init(frame: frame)
-        
-        userDefaults.double(forKey: "currentValue")
-        if (userDefaults.object(forKey: "currentValue") != nil) {
-            print("データ有り")
+        for dict in dictArray{
+            graphPoints.append(dict["date"] as? String ?? "noData")
+            let v : Int = dict["value"] as? Int ?? 0
+            graphDatas.append(CGFloat(v))
         }
-        userDefaults.register(defaults: ["currentValue": "default"])
-        
-        userDefaults.synchronize()
-
+    }
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been impremented")
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
+    
+    //let userDefaults = UserDefaults.standard
+    
+//    override init(frame: CGRect) {
+//        super.init(frame: frame)
+//
+//        userDefaults.double(forKey: "currentValue")
+//        if (userDefaults.object(forKey: "currentValue") != nil) {
+//            print("データ有り")
+//        }
+//        userDefaults.register(defaults: ["currentValue": "default"])
+//        
+//        userDefaults.synchronize()
+//
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        
+//        let realm = try! Realm()
+//        
+//    }
+
     
     func drawLineGraph()
     {
-        graphPoints = ["2000/2/3", "2000/3/3", "2000/4/3", "2000/5/3", "2000/6/3", "2000/7/3", "2000/8/3"]
-        graphDatas = [CGFloat(userDefaults.double(forKey: "currentValue"))]
+//        graphPoints = ["2000/2/3", "2000/3/3", "2000/4/3", "2000/5/3", "2000/6/3", "2000/7/3", "2000/8/3"]
+//        graphDatas = [CGFloat(userDefaults.double(forKey: "currentValue"))]
         
         GraphFrame()
         MemoriGraphDraw()
