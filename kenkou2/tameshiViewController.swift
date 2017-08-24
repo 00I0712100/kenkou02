@@ -24,35 +24,56 @@ class tameshiViewController: UIViewController {
         
         let now = Date() // 現在日時の取得
         let dateFormatter = DateFormatter()
+//        let nyuryoku = Nyuryoku()
         
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale! // ロケールの設定
         dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
         
         hiniti.text = dateFormatter.string(from: now)
         
-        let originGraphPoints = ["2017/8/24", "", "", "", ""]
-        let originGraphDatas = [10, 50, -30,425,-60]
-        var d: [Dictionary<String, AnyObject>] = []
+//        let realm = try! Realm()
+//        let nyuryokuDateArray: [Nyuryoku] = Array(realm.objects(Nyuryoku.self))
+//        
+////        let originGraphPoints = ["2017/8/24", "", "", "", ""]
+////        let originGraphDatas = [10, 50, -30,425,-60]
+////        var d: [Dictionary<String, AnyObject>] = []
+////        
+////        for i in 0 ..< originGraphPoints.count{
+////            let dict = ["date": originGraphPoints[i], "value": originGraphDatas[i] ]as [String: AnyObject]
+////            d.append(dict)
+////        }
+//       
+//        let graphview = Graph(frame: scview.frame, dataArray: nyuryokuDateArray) //グラフを表示するクラス
+//        scview.addSubview(graphview) //グラフをスクロールビューに配置
+//        graphview.drawLineGraph() //グラフ描画開始
+//        
+//        scview.contentSize = CGSize(width:graphview.checkWidth()+20, height:graphview.checkHeight()) //スクロールビュー内のコンテンツサイズ設定
+
+        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
         
-        for i in 0 ..< originGraphPoints.count{
-            let dict = ["date": originGraphPoints[i], "value":originGraphDatas[i] as [String: AnyObject]]
-            d.append(dict)
-        }
-       
-        let graphview = Graph(frame: scview.frame, dictArray: d) //グラフを表示するクラス
+        let realm = try! Realm()
+        let nyuryokuDateArray: [Nyuryoku] = Array(realm.objects(Nyuryoku.self))
+        
+        //        let originGraphPoints = ["2017/8/24", "", "", "", ""]
+        //        let originGraphDatas = [10, 50, -30,425,-60]
+        //        var d: [Dictionary<String, AnyObject>] = []
+        //
+        //        for i in 0 ..< originGraphPoints.count{
+        //            let dict = ["date": originGraphPoints[i], "value": originGraphDatas[i] ]as [String: AnyObject]
+        //            d.append(dict)
+        //        }
+        
+        let graphview = Graph(frame: scview.frame, dataArray: nyuryokuDateArray) //グラフを表示するクラス
         scview.addSubview(graphview) //グラフをスクロールビューに配置
         graphview.drawLineGraph() //グラフ描画開始
         
         scview.contentSize = CGSize(width:graphview.checkWidth()+20, height:graphview.checkHeight()) //スクロールビュー内のコンテンツサイズ設定
 
-        // Do any additional setup after loading the view.
+        
     }
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        
-//        let realm = try! Realm()
-//        
-//    }
     
     
     

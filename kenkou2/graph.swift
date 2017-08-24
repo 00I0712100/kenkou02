@@ -19,24 +19,26 @@ class Graph: UIView {
     var circleColor:UIColor = UIColor(red:0.088,  green:0.501,  blue:0.979, alpha:1) //円の色
     var circleColor2: UIColor = UIColor.white
     
-    var graphDict: [String: AnyObject] = [:]
+//    var graphDict: [String: AnyObject] = [:]
     
-    let nyuryoku = Nyuryoky()
+//    let nyuryoku = Nyuryoku()
 
     
     
     var memoriMargin: CGFloat = 70 //横目盛の感覚
     var graphHeight: CGFloat = 400 //グラフの高さ
-    var graphPoints: [String] = []
-    var graphDatas: [CGFloat] = []
+    var graphPoints: [String] = [] //日付
+    var graphDatas: [CGFloat] = []//y座標
     
-    init(frame: CGRect, dictArray: [Dictionary<String, AnyObject>]) {
+    init(frame: CGRect, dataArray: [Nyuryoku]) {
         super.init(frame: frame)
-        for dict in dictArray{
-            graphPoints.append(dict["date"] as? String ?? "noData")
-            let v : Int = dict["value"] as? Int ?? 0
-            graphDatas.append(CGFloat(v))
+        for data in dataArray{
+            graphPoints.append(data.day)
+            graphDatas.append(CGFloat(data.atai))
         }
+        print(graphPoints)
+        print(graphDatas)
+        
     }
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been impremented")

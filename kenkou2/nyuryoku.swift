@@ -9,8 +9,8 @@
 import Foundation
 import RealmSwift
 
-class nyuryoku: Object{
+class Nyuryoku: Object{
     dynamic var atai: Double = 0
-    dynamic var day: NSDate = NSDate()
+    dynamic var day: String = ""
     
 }

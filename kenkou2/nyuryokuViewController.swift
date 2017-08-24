@@ -31,7 +31,7 @@ class nyuryokuViewController: UIViewController {
         let dateFormatter = DateFormatter()
         
         dateFormatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale! // ロケールの設定
-        dateFormatter.dateFormat = "yyyy.MM.dd" // 日付フォーマットの設定
+        dateFormatter.dateFormat = "MM.dd" // 日付フォーマットの設定
         
         label2.text = dateFormatter.string(from: now)
         
@@ -108,13 +108,19 @@ class nyuryokuViewController: UIViewController {
         
         //画面遷移して前の画面に戻る
         let realm = try! Realm()
-        let nyuryoku = nyuryoku()
-        
+        let nyuryoku = Nyuryoku()
+                
         nyuryoku.atai = Double(numString)!
+        nyuryoku.day = label2.text!
         try! realm.write {
             realm.add(nyuryoku)
+            
+            print("aiu")
+            
+           
+
         }
-        
+         self.dismiss(animated: true, completion: nil)
         
 //        let userDefaults = UserDefaults.standard
 //
