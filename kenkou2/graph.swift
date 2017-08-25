@@ -12,12 +12,18 @@ import RealmSwift
 class Graph: UIView {
     
     
+    
+    @IBInspectable var startColor: UIColor = UIColor(red: 0.549, green: 0.8, blue: 0.851, alpha: 1.0)
+    @IBInspectable var endColor: UIColor = UIColor.blue
+    
     var lineWidth:CGFloat = 3.0 //グラフ線の太さ
-    var lineColor:UIColor = UIColor(red:0.088,  green:0.501,  blue:0.979, alpha:1) //グラフ線の色
-    var circleWidth:CGFloat = 8.0 //円の半径
-    var circleWidth2: CGFloat = 4.0 //小さい円の半径
-    var circleColor:UIColor = UIColor(red:0.088,  green:0.501,  blue:0.979, alpha:1) //円の色
+    var lineColor:UIColor = UIColor.white //グラフ線の色
+    var circleWidth:CGFloat = 7.0 //円の半径
+    var circleWidth2: CGFloat = 4.8 //ちいさな円の半径
+    //var circleWidth3: CGFloat = 5.0 //小さな円の半径
+    var circleColor:UIColor = UIColor.white//円の色
     var circleColor2: UIColor = UIColor.white
+   // var circleColor3: UIColor = UIColor(red: 0.0, green: 0.098, blue: 0.396, alpha: 1.0)
     
 //    var graphDict: [String: AnyObject] = [:]
     
@@ -29,6 +35,10 @@ class Graph: UIView {
     var graphHeight: CGFloat = 400 //グラフの高さ
     var graphPoints: [String] = [] //日付
     var graphDatas: [CGFloat] = []//y座標
+    
+    
+    
+   
     
     init(frame: CGRect, dataArray: [Nyuryoku]) {
         super.init(frame: frame)
@@ -84,6 +94,7 @@ class Graph: UIView {
     
     //グラフを描画するviewの大きさ
     func GraphFrame(){
+        
         self.backgroundColor = UIColor(red:0.972,  green:0.973,  blue:0.972, alpha:1)
         
         self.frame = CGRect(x: 0 , y: 0, width: checkWidth(), height: 1000)
@@ -127,7 +138,50 @@ class Graph: UIView {
     
     override func draw(_ rect: CGRect) {
         
+        
+        
         var count:Int = 0
+        
+        //グラデーションを描画
+        let colorWidth = rect.width
+        let colorHeight = rect.height
+        
+        let path = UIBezierPath(roundedRect: rect,
+                                byRoundingCorners: UIRectCorner.allCorners,
+                                cornerRadii: CGSize(width: 8.0, height: 8.0))
+        path.addClip()
+        
+        let context = UIGraphicsGetCurrentContext()
+        let colors = [startColor.cgColor, endColor.cgColor]
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let colorLocations:[CGFloat] = [0.0, 1.0]
+        let gradient = CGGradient(colorsSpace: colorSpace,
+                                  colors: colors as CFArray,
+                                  locations: colorLocations)
+        var startPoint = CGPoint.zero
+        var endPoint = CGPoint(x:0, y:self.bounds.height)
+        context!.drawLinearGradient(gradient!,
+                                    start: startPoint,
+                                    end: endPoint,
+                                    options: .drawsBeforeStartLocation)
+        
+
+        //後ろのラインを描画
+        
+        let graphPath = UIBezierPath()
+        
+        for i in 0..<4{
+            graphPath.move(to: CGPoint(x: 0, y: graphHeight/4*CGFloat(i+1)))
+            graphPath.addLine(to: CGPoint(x: CGFloat(graphDatas.count) * memoriMargin, y:graphHeight/4*CGFloat(i+1)))
+        }
+        let color = UIColor(white: 1.0, alpha: 0.3)
+        color.setStroke()
+//        graphPath.move(to: CGPoint(x: CGFloat(memoriMargin), y: CGFloat(graphHeight)))
+//        graphPath.addLine(to: CGPoint(x: CGFloat(lineWidth - memoriMargin), y: CGFloat(graphHeight)))
+        
+        graphPath.lineWidth = 1.0
+        graphPath.stroke()
+
         
         
         //線を描写
@@ -185,6 +239,7 @@ class Graph: UIView {
         count = 0
         var myCircle = UIBezierPath()
         var myCircle2 = UIBezierPath()
+        //var myCircle3 = UIBezierPath()
         
         
         
@@ -216,14 +271,24 @@ class Graph: UIView {
                 if Int(count) == 0 {
                     circlePoint = CGPoint(x: CGFloat(count) * memoriMargin + circleWidth, y: nowY)
                     myCircle = UIBezierPath(arcCenter: circlePoint,radius: circleWidth,startAngle: 0.0,endAngle: CGFloat(M_PI*2),clockwise: false)
-                    circleColor.setFill()
-                    myCircle.fill()
+                    circleColor.setStroke()
+                    myCircle.lineWidth = 1.8
+                   // myCircle.fill()
+                    
+                    
                     myCircle.stroke()
                     
                     myCircle2 = UIBezierPath(arcCenter: circlePoint, radius: circleWidth2, startAngle: 0.0, endAngle: CGFloat(M_PI*2), clockwise: false)
                     circleColor2.setFill()
                     myCircle2.fill()
-                    myCircle2.stroke()
+                    //myCircle2.stroke()
+                    
+//                    myCircle3 = UIBezierPath(arcCenter: circlePoint, radius: circleWidth3, startAngle: 0.0, endAngle: CGFloat(M_PI*2), clockwise: false)
+//                    circleColor3.setFill()
+//                    myCircle3.fill()
+//                    myCircle3.stroke()
+                    
+                    
                 }
 
                 
@@ -239,15 +304,21 @@ class Graph: UIView {
                     endAngle: CGFloat(M_PI*2),
                     // 反時計回り
                     clockwise: false)
-                circleColor.setFill()
-                myCircle.fill()
+                circleColor.setStroke()
+                //myCircle.fill()
+                myCircle.lineWidth = 1.8
                 myCircle.stroke()
                 
                 myCircle2 = UIBezierPath(arcCenter: circlePoint, radius: circleWidth2, startAngle: 0.0, endAngle: CGFloat(M_PI*2), clockwise: false)
                 circleColor2.setFill()
                 myCircle2.fill()
-                myCircle2.stroke()
+                //myCircle2.stroke()
                 
+//                myCircle3 = UIBezierPath(arcCenter: circlePoint, radius: circleWidth3, startAngle: 0.0, endAngle: CGFloat(M_PI*2), clockwise: false)
+//                circleColor3.setFill()
+//                myCircle3.fill()
+//                myCircle3.stroke()
+//                
                 
                 
                 

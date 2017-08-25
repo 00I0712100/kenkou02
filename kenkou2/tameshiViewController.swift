@@ -16,7 +16,7 @@ class tameshiViewController: UIViewController {
     @IBOutlet weak var bmi: UILabel!
     
 
-       //nyuryoku = Nyuryoku()
+           //nyuryoku = Nyuryoku()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +69,7 @@ class tameshiViewController: UIViewController {
         //        }
         
         let graphview = Graph(frame: scview.frame, dataArray: nyuryokuDateArray) //グラフを表示するクラス
+        
         scview.addSubview(graphview) //グラフをスクロールビューに配置
         graphview.drawLineGraph() //グラフ描画開始
         
