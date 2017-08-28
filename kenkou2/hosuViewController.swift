@@ -15,6 +15,8 @@ class hosuViewController: UIViewController {
      @IBOutlet var label:UILabel!
     
      var pedometer = CMPedometer()
+    var steps:String = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,8 @@ class hosuViewController: UIViewController {
                 DispatchQueue.main.async(execute: { () -> Void in
                     if(error == nil){
                         // 歩数
-                        let steps = data!.numberOfSteps
-                        self.label.text = "steps: \(steps)"
+                        self.steps = String(describing: data!.numberOfSteps)
+                        self.label.text = "steps: \(self.steps)"
                     }
                 })
             }
@@ -41,6 +43,13 @@ class hosuViewController: UIViewController {
         //画面遷移して前の画面に戻る
         let realm = try! Realm()
         let allData = AllData()
+        
+        allData.hosuData = self.steps
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        allData.hosuData = dateFormatter.string(from: Date())
+        
         
         allData.hosuData = String(describing: pedometer)
         //nyuryoku.day = label2.text!
