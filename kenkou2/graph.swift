@@ -13,8 +13,8 @@ class Graph: UIView {
     
     
     
-    @IBInspectable var startColor: UIColor = UIColor(red: 0.549, green: 0.8, blue: 0.851, alpha: 1.0)
-    @IBInspectable var endColor: UIColor = UIColor.blue
+    @IBInspectable var startColor: UIColor = UIColor(red: 0.651, green: 0.871, blue: 0.882, alpha: 1.0)
+    @IBInspectable var endColor: UIColor = UIColor(red: 0.42, green: 0.71, blue: 0.608, alpha: 0.8)
     
     var lineWidth:CGFloat = 3.0 //グラフ線の太さ
     var lineColor:UIColor = UIColor.white //グラフ線の色

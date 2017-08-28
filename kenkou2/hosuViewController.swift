@@ -8,12 +8,13 @@
 
 import UIKit
 import CoreMotion
+import RealmSwift
 
 class hosuViewController: UIViewController {
     
      @IBOutlet var label:UILabel!
     
-     let pedometer = CMPedometer()
+     var pedometer = CMPedometer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +33,27 @@ class hosuViewController: UIViewController {
             }
         }
         
+        
     }
+    
+    @IBAction func ok(){
+        
+        //画面遷移して前の画面に戻る
+        let realm = try! Realm()
+        let allData = AllData()
+        
+        allData.hosuData = String(describing: pedometer)
+        //nyuryoku.day = label2.text!
+        try! realm.write {
+            realm.add(allData)
+            
+            print("aiu")
+            
+            
+            
+        }
 
-    override func didReceiveMemoryWarning() {
+    func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -42,3 +61,4 @@ class hosuViewController: UIViewController {
 
 }
 
+}

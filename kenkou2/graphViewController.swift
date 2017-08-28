@@ -9,11 +9,13 @@
 import UIKit
 import RealmSwift
 
-class tameshiViewController: UIViewController {
+class graphViewController: UIViewController {
     
     @IBOutlet weak var scview: UIScrollView! //storyboardでスクロールビューを配置しているので接続
     @IBOutlet weak var hiniti: UILabel!
     @IBOutlet weak var bmi: UILabel!
+   // @IBOutlet weak var back: UIButton!
+    
     
 
            //nyuryoku = Nyuryoku()
@@ -77,8 +79,10 @@ class tameshiViewController: UIViewController {
 
         
     }
-    
-    
+    @IBAction func back(){
+        self.dismiss(animated: true, completion: nil)
+
+    }
     
 
 

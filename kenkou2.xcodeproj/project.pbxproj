@@ -15,6 +15,11 @@
 		E50654971E0FBBA5003B921C /* kenkou002.png in Resources */ = {isa = PBXBuildFile; fileRef = E50654961E0FBBA5003B921C /* kenkou002.png */; };
 		E50CA2571F4E6F240084D5A3 /* nyuryoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */; };
 		E51200B11EDEDE2A00C2185D /* Syokuhin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51200B01EDEDE2A00C2185D /* Syokuhin.swift */; };
+		E51B261E1F51E0E7008A3EC2 /* nyuryoku05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51B261D1F51E0E7008A3EC2 /* nyuryoku05.jpg */; };
+		E51B26201F52831D008A3EC2 /* graph02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51B261F1F52831D008A3EC2 /* graph02.jpg */; };
+		E51B26221F5283C5008A3EC2 /* graph03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51B26211F5283C5008A3EC2 /* graph03.jpg */; };
+		E51B26241F5285D0008A3EC2 /* graph04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51B26231F5285D0008A3EC2 /* graph04.jpg */; };
+		E51B26261F528F53008A3EC2 /* hozon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E51B26251F528F53008A3EC2 /* hozon.jpg */; };
 		E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */; };
 		E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */; };
 		E55CA4F21E0DFA3F0023DFD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55CA4F11E0DFA3F0023DFD2 /* ViewController.swift */; };
@@ -22,7 +27,7 @@
 		E56A59B91F4A84BF00AA731E /* kenkou02.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59B71F4A84BF00AA731E /* kenkou02.png */; };
 		E56A59BA1F4A84BF00AA731E /* kenkou04.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59B81F4A84BF00AA731E /* kenkou04.png */; };
 		E56A59BC1F4A84DD00AA731E /* kenkou01.png in Resources */ = {isa = PBXBuildFile; fileRef = E56A59BB1F4A84DD00AA731E /* kenkou01.png */; };
-		E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */; };
+		E56A59BE1F4BBE6B00AA731E /* graphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59BD1F4BBE6B00AA731E /* graphViewController.swift */; };
 		E56A59C01F4BCEA600AA731E /* graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56A59BF1F4BCEA600AA731E /* graph.swift */; };
 		E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57EE9F41E264DA000A83C8B /* Diary.swift */; };
 		E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211181DDC69CC00AE95F5 /* AppDelegate.swift */; };
@@ -32,6 +37,8 @@
 		E582112E1DDC69CD00AE95F5 /* kenkou2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E582112D1DDC69CD00AE95F5 /* kenkou2Tests.swift */; };
 		E58211391DDC69CD00AE95F5 /* kenkou2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58211381DDC69CD00AE95F5 /* kenkou2UITests.swift */; };
 		E58211481DDC6A0C00AE95F5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */; };
+		E58C89A61F5410B90026400D /* dataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C89A51F5410B90026400D /* dataViewController.swift */; };
+		E58C89A81F5412290026400D /* alldata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C89A71F5412290026400D /* alldata.swift */; };
 		E5BA4D4A1E0E4DAB0068565F /* hozonnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */; };
 		E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */; };
 		E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4D1E0E532F0068565F /* UITableView+.swift */; };
@@ -75,6 +82,11 @@
 		E50654961E0FBBA5003B921C /* kenkou002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou002.png; sourceTree = "<group>"; };
 		E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nyuryoku.swift; sourceTree = "<group>"; };
 		E51200B01EDEDE2A00C2185D /* Syokuhin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Syokuhin.swift; sourceTree = "<group>"; };
+		E51B261D1F51E0E7008A3EC2 /* nyuryoku05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nyuryoku05.jpg; sourceTree = "<group>"; };
+		E51B261F1F52831D008A3EC2 /* graph02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graph02.jpg; sourceTree = "<group>"; };
+		E51B26211F5283C5008A3EC2 /* graph03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graph03.jpg; sourceTree = "<group>"; };
+		E51B26231F5285D0008A3EC2 /* graph04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = graph04.jpg; sourceTree = "<group>"; };
+		E51B26251F528F53008A3EC2 /* hozon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hozon.jpg; sourceTree = "<group>"; };
 		E55CA4ED1E0D06560023DFD2 /* dairyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dairyViewController.swift; sourceTree = "<group>"; };
 		E55CA4EF1E0D09E50023DFD2 /* hozonnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnViewController.swift; sourceTree = "<group>"; };
 		E55CA4F11E0DFA3F0023DFD2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +94,7 @@
 		E56A59B71F4A84BF00AA731E /* kenkou02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou02.png; sourceTree = "<group>"; };
 		E56A59B81F4A84BF00AA731E /* kenkou04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou04.png; sourceTree = "<group>"; };
 		E56A59BB1F4A84DD00AA731E /* kenkou01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kenkou01.png; sourceTree = "<group>"; };
-		E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tameshiViewController.swift; sourceTree = "<group>"; };
+		E56A59BD1F4BBE6B00AA731E /* graphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphViewController.swift; sourceTree = "<group>"; };
 		E56A59BF1F4BCEA600AA731E /* graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graph.swift; sourceTree = "<group>"; };
 		E57EE9F41E264DA000A83C8B /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
 		E58211151DDC69CC00AE95F5 /* kenkou2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kenkou2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +110,8 @@
 		E58211381DDC69CD00AE95F5 /* kenkou2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kenkou2UITests.swift; sourceTree = "<group>"; };
 		E582113A1DDC69CD00AE95F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E58C89A51F5410B90026400D /* dataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataViewController.swift; sourceTree = "<group>"; };
+		E58C89A71F5412290026400D /* alldata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alldata.swift; sourceTree = "<group>"; };
 		E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hozonnCell.xib; sourceTree = "<group>"; };
 		E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnCell.swift; sourceTree = "<group>"; };
 		E5BA4D4D1E0E532F0068565F /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+.swift"; path = "../UITableView+.swift"; sourceTree = "<group>"; };
@@ -179,6 +193,11 @@
 		E58211171DDC69CC00AE95F5 /* kenkou2 */ = {
 			isa = PBXGroup;
 			children = (
+				E51B26251F528F53008A3EC2 /* hozon.jpg */,
+				E51B26231F5285D0008A3EC2 /* graph04.jpg */,
+				E51B26211F5283C5008A3EC2 /* graph03.jpg */,
+				E51B261F1F52831D008A3EC2 /* graph02.jpg */,
+				E51B261D1F51E0E7008A3EC2 /* nyuryoku05.jpg */,
 				E50654961E0FBBA5003B921C /* kenkou002.png */,
 				E56A59BB1F4A84DD00AA731E /* kenkou01.png */,
 				E56A59B71F4A84BF00AA731E /* kenkou02.png */,
@@ -205,9 +224,11 @@
 				E5E788FD1E6FE9F70008CEFD /* Syokuji.swift */,
 				E51200B01EDEDE2A00C2185D /* Syokuhin.swift */,
 				E56A59B51F4A79D200AA731E /* nyuryokuViewController.swift */,
-				E56A59BD1F4BBE6B00AA731E /* tameshiViewController.swift */,
+				E56A59BD1F4BBE6B00AA731E /* graphViewController.swift */,
 				E56A59BF1F4BCEA600AA731E /* graph.swift */,
 				E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */,
+				E58C89A51F5410B90026400D /* dataViewController.swift */,
+				E58C89A71F5412290026400D /* alldata.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -361,10 +382,15 @@
 				E58211231DDC69CC00AE95F5 /* LaunchScreen.storyboard in Resources */,
 				E58211201DDC69CC00AE95F5 /* Assets.xcassets in Resources */,
 				E5E315711E38BDAC0062CDF1 /* Main.storyboard in Resources */,
+				E51B26261F528F53008A3EC2 /* hozon.jpg in Resources */,
+				E51B261E1F51E0E7008A3EC2 /* nyuryoku05.jpg in Resources */,
+				E51B26241F5285D0008A3EC2 /* graph04.jpg in Resources */,
 				E5BA4D4A1E0E4DAB0068565F /* hozonnCell.xib in Resources */,
 				E56A59B91F4A84BF00AA731E /* kenkou02.png in Resources */,
 				E56A59BC1F4A84DD00AA731E /* kenkou01.png in Resources */,
 				E50654971E0FBBA5003B921C /* kenkou002.png in Resources */,
+				E51B26201F52831D008A3EC2 /* graph02.jpg in Resources */,
+				E51B26221F5283C5008A3EC2 /* graph03.jpg in Resources */,
 				E56A59BA1F4A84BF00AA731E /* kenkou04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58C89A61F5410B90026400D /* dataViewController.swift in Sources */,
 				E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */,
 				E55CA4F21E0DFA3F0023DFD2 /* ViewController.swift in Sources */,
 				E55CA4EE1E0D06560023DFD2 /* dairyViewController.swift in Sources */,
@@ -540,7 +567,7 @@
 				E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */,
 				E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */,
 				E57EE9F51E264DA000A83C8B /* Diary.swift in Sources */,
-				E56A59BE1F4BBE6B00AA731E /* tameshiViewController.swift in Sources */,
+				E56A59BE1F4BBE6B00AA731E /* graphViewController.swift in Sources */,
 				E50CA2571F4E6F240084D5A3 /* nyuryoku.swift in Sources */,
 				E582111B1DDC69CC00AE95F5 /* hosuViewController.swift in Sources */,
 				E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */,
@@ -549,6 +576,7 @@
 				E56A59B61F4A79D300AA731E /* nyuryokuViewController.swift in Sources */,
 				E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */,
 				E50654951E0FB9B6003B921C /* UIColorExtension.swift in Sources */,
+				E58C89A81F5412290026400D /* alldata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
