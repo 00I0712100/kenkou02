@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+
+
 class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     
@@ -16,6 +18,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var goukei: UILabel!
     //@IBOutlet weak var dateLabel: UILabel!
+    
     
     
     
@@ -56,6 +59,8 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
         return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first ?? Syokuji()
         
     }()
+    
+    weak var delegate: PageViewControllerDelegate?
     
     
     let imagePickerController = UIImagePickerController()
@@ -138,38 +143,40 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     private func selectFromCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
-            
-            
-            self.present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("カメラ許可をしていない時の処理")
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            let imagePickerController = UIImagePickerController()
+//            imagePickerController.delegate = self
+//            imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
+//            delegate?.presentImagePicker(sourceType: .camera, index: 0)
+//            
+//            self.present(imagePickerController, animated: true, completion: nil)
+//        } else {
+//            print("カメラ許可をしていない時の処理")
+//        }
+        delegate?.presentImagePicker(sourceType: .camera, index: 0)
     }
     
     private func selectFromLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePickerController.allowsEditing = true
-            self.present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("カメラロール許可をしていない時の処理")
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+//            imagePickerController.allowsEditing = true
+//            self.present(imagePickerController, animated: true, completion: nil)
+//        } else {
+//            print("カメラロール許可をしていない時の処理")
+//        }
+         delegate?.presentImagePicker(sourceType: .photoLibrary, index: 0)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-                syokujiimage.image = image
-               self.dismiss(animated: true, completion: {
-                   self.performSegue(withIdentifier: "back", sender: nil)
-                   self.dismiss(animated: true, completion: nil)
-                
-               })
-    }
-    
+//    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+//        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+//                syokujiimage.image = image
+//               self.dismiss(animated: true, completion: {
+//                   self.performSegue(withIdentifier: "back", sender: nil)
+//                   self.dismiss(animated: true, completion: nil)
+//                
+//               })
+//    }
+//    
 //    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
 //        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
 //        syokujiimage.image = image
@@ -211,7 +218,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     @IBAction func kanryou(){
-        
+        delegate?.dismiss()
     }
    
     

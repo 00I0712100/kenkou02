@@ -39,10 +39,13 @@
 		E58211481DDC6A0C00AE95F5 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */; };
 		E58C89A61F5410B90026400D /* dataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C89A51F5410B90026400D /* dataViewController.swift */; };
 		E58C89A81F5412290026400D /* alldata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C89A71F5412290026400D /* alldata.swift */; };
+		E58C89AB1F544E360026400D /* hosuCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58C89A91F544E360026400D /* hosuCellTableViewCell.swift */; };
+		E58C89AC1F544E360026400D /* hosuCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E58C89AA1F544E360026400D /* hosuCellTableViewCell.xib */; };
 		E5BA4D4A1E0E4DAB0068565F /* hozonnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */; };
 		E5BA4D4C1E0E4E350068565F /* hozonnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */; };
 		E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4D1E0E532F0068565F /* UITableView+.swift */; };
 		E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4F1E0E54CB0068565F /* NSObject+.swift */; };
+		E5CFE65F1F56B2CE003515EF /* pieChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFE65E1F56B2CE003515EF /* pieChartsViewController.swift */; };
 		E5E315711E38BDAC0062CDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E3156F1E38BDAC0062CDF1 /* Main.storyboard */; };
 		E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */; };
 		E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315741E41FC010062CDF1 /* diaryViewController3.swift */; };
@@ -112,10 +115,13 @@
 		E58211471DDC6A0C00AE95F5 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E58C89A51F5410B90026400D /* dataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dataViewController.swift; sourceTree = "<group>"; };
 		E58C89A71F5412290026400D /* alldata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alldata.swift; sourceTree = "<group>"; };
+		E58C89A91F544E360026400D /* hosuCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hosuCellTableViewCell.swift; sourceTree = "<group>"; };
+		E58C89AA1F544E360026400D /* hosuCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hosuCellTableViewCell.xib; sourceTree = "<group>"; };
 		E5BA4D491E0E4DAB0068565F /* hozonnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hozonnCell.xib; sourceTree = "<group>"; };
 		E5BA4D4B1E0E4E350068565F /* hozonnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hozonnCell.swift; sourceTree = "<group>"; };
 		E5BA4D4D1E0E532F0068565F /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+.swift"; path = "../UITableView+.swift"; sourceTree = "<group>"; };
 		E5BA4D4F1E0E54CB0068565F /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		E5CFE65E1F56B2CE003515EF /* pieChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieChartsViewController.swift; sourceTree = "<group>"; };
 		E5E315701E38BDAC0062CDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController2.swift; sourceTree = "<group>"; };
 		E5E315741E41FC010062CDF1 /* diaryViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController3.swift; sourceTree = "<group>"; };
@@ -229,6 +235,9 @@
 				E50CA2561F4E6F230084D5A3 /* nyuryoku.swift */,
 				E58C89A51F5410B90026400D /* dataViewController.swift */,
 				E58C89A71F5412290026400D /* alldata.swift */,
+				E58C89A91F544E360026400D /* hosuCellTableViewCell.swift */,
+				E58C89AA1F544E360026400D /* hosuCellTableViewCell.xib */,
+				E5CFE65E1F56B2CE003515EF /* pieChartsViewController.swift */,
 			);
 			path = kenkou2;
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 				E56A59B91F4A84BF00AA731E /* kenkou02.png in Resources */,
 				E56A59BC1F4A84DD00AA731E /* kenkou01.png in Resources */,
 				E50654971E0FBBA5003B921C /* kenkou002.png in Resources */,
+				E58C89AC1F544E360026400D /* hosuCellTableViewCell.xib in Resources */,
 				E51B26201F52831D008A3EC2 /* graph02.jpg in Resources */,
 				E51B26221F5283C5008A3EC2 /* graph03.jpg in Resources */,
 				E56A59BA1F4A84BF00AA731E /* kenkou04.png in Resources */,
@@ -562,6 +572,7 @@
 				E5E788FE1E6FE9F70008CEFD /* Syokuji.swift in Sources */,
 				E50654931E0FB14C003B921C /* PageViewController.swift in Sources */,
 				E50654911E0FB098003B921C /* CAPSPageMenu.swift in Sources */,
+				E58C89AB1F544E360026400D /* hosuCellTableViewCell.swift in Sources */,
 				E56A59C01F4BCEA600AA731E /* graph.swift in Sources */,
 				E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */,
 				E55CA4F01E0D09E50023DFD2 /* hozonnViewController.swift in Sources */,
@@ -573,6 +584,7 @@
 				E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */,
 				E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */,
 				E5F9999F1E263C3A00B6516A /* karendaViewController.swift in Sources */,
+				E5CFE65F1F56B2CE003515EF /* pieChartsViewController.swift in Sources */,
 				E56A59B61F4A79D300AA731E /* nyuryokuViewController.swift in Sources */,
 				E58211191DDC69CC00AE95F5 /* AppDelegate.swift in Sources */,
 				E50654951E0FB9B6003B921C /* UIColorExtension.swift in Sources */,

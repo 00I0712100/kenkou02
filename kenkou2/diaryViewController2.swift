@@ -61,6 +61,7 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
         
         
     }()
+    weak var delegate: PageViewControllerDelegate?
     
     
     override func viewDidLoad() {
@@ -115,26 +116,28 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
     }
     
     private func selectFromCamera() {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let imagePickerController = UIImagePickerController()
-            imagePickerController.delegate = self
-            imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
-            
-            
-            self.present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("カメラ許可をしていない時の処理")
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+//            let imagePickerController = UIImagePickerController()
+//            imagePickerController.delegate = self
+//            imagePickerController.sourceType = UIImagePickerControllerSourceType.camera
+//            
+//            
+//            self.present(imagePickerController, animated: true, completion: nil)
+//        } else {
+//            print("カメラ許可をしていない時の処理")
+//        }
+        delegate?.presentImagePicker(sourceType: .camera, index: 1)
     }
     
     private func selectFromLibrary() {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            imagePickerController.allowsEditing = true
-            self.present(imagePickerController, animated: true, completion: nil)
-        } else {
-            print("カメラロール許可をしていない時の処理")
-        }
+//        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//            imagePickerController.sourceType = UIImagePickerControllerSourceType.photoLibrary
+//            imagePickerController.allowsEditing = true
+//            self.present(imagePickerController, animated: true, completion: nil)
+//        } else {
+//            print("カメラロール許可をしていない時の処理")
+//        }
+        delegate?.presentImagePicker(sourceType: .photoLibrary, index: 1)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -185,7 +188,7 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
         
         //画面遷移して前の画面に戻る
         self.dismiss(animated: true, completion: nil)
-        
+        delegate?.dismiss()
     }
     
     

@@ -13,6 +13,8 @@ class dataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet var label: UILabel!
+    
 
     var data = AllData()
     
@@ -22,6 +24,7 @@ class dataViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
 
         table.dataSource = self
+        table.registerCell(type: hosuCellTableViewCell.self)
         // Do any additional setup after loading the view.
     }
     func tableView(_ table: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +38,8 @@ class dataViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // cell?.textLabel?.text = "テスト"
         data = displayTextArray[indexPath.row]
         cell?.textLabel?.text = data.hosuData
+        
+        
         
         return cell!
     }

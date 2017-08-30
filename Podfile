@@ -8,6 +8,9 @@ target 'kenkou2' do
   pod 'JBDatePicker'
   
   pod 'RealmSwift'
+  
+  pod 'Charts'
+  
 
   # Pods for kenkou2
 

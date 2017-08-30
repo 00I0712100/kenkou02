@@ -36,6 +36,7 @@ class hosuViewController: UIViewController {
         }
         
         
+        
     }
     
     @IBAction func ok(){
@@ -48,10 +49,11 @@ class hosuViewController: UIViewController {
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
-        allData.hosuData = dateFormatter.string(from: Date())
+        allData.date = dateFormatter.string(from: Date())
         
         
-        allData.hosuData = String(describing: pedometer)
+        
+        //allData.hosuData = String(describing: pedometer)
         //nyuryoku.day = label2.text!
         try! realm.write {
             realm.add(allData)

@@ -9,7 +9,13 @@
 import UIKit
 import RealmSwift
 
-class PageViewController: UIViewController {
+protocol PageViewControllerDelegate: class {
+    func dismiss()
+    func presentImagePicker(sourceType: UIImagePickerControllerSourceType, index: Int)
+}
+
+
+class PageViewController: UIViewController, PageViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var hiduke: UILabel!
     
@@ -18,6 +24,8 @@ class PageViewController: UIViewController {
     var backColor :UIColor = UIColor.black
     
     var  syokuji: Syokuji!
+    
+    var selectedControllerIndex: Int?
 
     
     override func viewDidLoad() {
@@ -38,12 +46,16 @@ class PageViewController: UIViewController {
         var controllerArray : [UIViewController] = []
         
         let controller1 = self.storyboard!.instantiateViewController(withIdentifier: "diary") as! dairyViewController
+        controller1.delegate = self
         controllerArray.append(controller1)
         
+        
         let controller2 = self.storyboard!.instantiateViewController(withIdentifier: "hiru") as! diaryViewController2
+        controller2.delegate = self
         controllerArray.append(controller2)
         
         let controller3 = self.storyboard!.instantiateViewController(withIdentifier: "yoru") as! diaryViewController3
+        controller3.delegate = self
         controllerArray.append(controller3)
         
         controller1.title = "朝"
@@ -62,7 +74,36 @@ class PageViewController: UIViewController {
         
         self.view.addSubview(pageMenu!.view)
     }
-    
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    func  presentImagePicker(sourceType: UIImagePickerControllerSourceType, index: Int) {
+        let controller = UIImagePickerController()
+        controller.sourceType = sourceType
+        controller.delegate = self
+        controller.allowsEditing = true
+        self.present(controller, animated: true, completion: {
+             self.selectedControllerIndex = index
+        })
+    }
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        guard let index = selectedControllerIndex else{
+            return
+        }
+        if index == 0{
+            let controller = pageMenu?.controllerArray[index] as! dairyViewController
+            controller.syokujiimage.image = image
+        }else if index == 1{
+            let controller = pageMenu?.controllerArray[index] as! diaryViewController2
+            controller.syokujiimage.image = image
+            
+        }else{
+            let controller = pageMenu?.controllerArray[index] as! diaryViewController3
+            controller.syokujiimage.image = image
+        }
+         self.dismiss(animated: true, completion: nil)
+    }
     
     /*
      // MARK: - Navigation
