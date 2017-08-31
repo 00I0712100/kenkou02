@@ -46,6 +46,12 @@
 		E5BA4D4E1E0E532F0068565F /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4D1E0E532F0068565F /* UITableView+.swift */; };
 		E5BA4D501E0E54CB0068565F /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BA4D4F1E0E54CB0068565F /* NSObject+.swift */; };
 		E5CFE65F1F56B2CE003515EF /* pieChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CFE65E1F56B2CE003515EF /* pieChartsViewController.swift */; };
+		E5CFE6611F5802B6003515EF /* hosu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE6601F5802B6003515EF /* hosu.jpg */; };
+		E5CFE6631F58053E003515EF /* hosu02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE6621F58053E003515EF /* hosu02.jpg */; };
+		E5CFE6651F5805C7003515EF /* hosu03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE6641F5805C7003515EF /* hosu03.jpg */; };
+		E5CFE6671F580A56003515EF /* karenda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE6661F580A56003515EF /* karenda.jpg */; };
+		E5CFE6691F581625003515EF /* karenda03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE6681F581625003515EF /* karenda03.jpg */; };
+		E5CFE66B1F582509003515EF /* logo02.png in Resources */ = {isa = PBXBuildFile; fileRef = E5CFE66A1F582509003515EF /* logo02.png */; };
 		E5E315711E38BDAC0062CDF1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E3156F1E38BDAC0062CDF1 /* Main.storyboard */; };
 		E5E315731E41FBF20062CDF1 /* diaryViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */; };
 		E5E315751E41FC010062CDF1 /* diaryViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E315741E41FC010062CDF1 /* diaryViewController3.swift */; };
@@ -122,6 +128,12 @@
 		E5BA4D4D1E0E532F0068565F /* UITableView+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITableView+.swift"; path = "../UITableView+.swift"; sourceTree = "<group>"; };
 		E5BA4D4F1E0E54CB0068565F /* NSObject+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		E5CFE65E1F56B2CE003515EF /* pieChartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pieChartsViewController.swift; sourceTree = "<group>"; };
+		E5CFE6601F5802B6003515EF /* hosu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hosu.jpg; sourceTree = "<group>"; };
+		E5CFE6621F58053E003515EF /* hosu02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hosu02.jpg; sourceTree = "<group>"; };
+		E5CFE6641F5805C7003515EF /* hosu03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hosu03.jpg; sourceTree = "<group>"; };
+		E5CFE6661F580A56003515EF /* karenda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karenda.jpg; sourceTree = "<group>"; };
+		E5CFE6681F581625003515EF /* karenda03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = karenda03.jpg; sourceTree = "<group>"; };
+		E5CFE66A1F582509003515EF /* logo02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo02.png; sourceTree = "<group>"; };
 		E5E315701E38BDAC0062CDF1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E5E315721E41FBF20062CDF1 /* diaryViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController2.swift; sourceTree = "<group>"; };
 		E5E315741E41FC010062CDF1 /* diaryViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = diaryViewController3.swift; sourceTree = "<group>"; };
@@ -199,6 +211,12 @@
 		E58211171DDC69CC00AE95F5 /* kenkou2 */ = {
 			isa = PBXGroup;
 			children = (
+				E5CFE66A1F582509003515EF /* logo02.png */,
+				E5CFE6681F581625003515EF /* karenda03.jpg */,
+				E5CFE6661F580A56003515EF /* karenda.jpg */,
+				E5CFE6641F5805C7003515EF /* hosu03.jpg */,
+				E5CFE6621F58053E003515EF /* hosu02.jpg */,
+				E5CFE6601F5802B6003515EF /* hosu.jpg */,
 				E51B26251F528F53008A3EC2 /* hozon.jpg */,
 				E51B26231F5285D0008A3EC2 /* graph04.jpg */,
 				E51B26211F5283C5008A3EC2 /* graph03.jpg */,
@@ -389,14 +407,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E58211231DDC69CC00AE95F5 /* LaunchScreen.storyboard in Resources */,
+				E5CFE6611F5802B6003515EF /* hosu.jpg in Resources */,
 				E58211201DDC69CC00AE95F5 /* Assets.xcassets in Resources */,
 				E5E315711E38BDAC0062CDF1 /* Main.storyboard in Resources */,
+				E5CFE6671F580A56003515EF /* karenda.jpg in Resources */,
+				E5CFE6691F581625003515EF /* karenda03.jpg in Resources */,
 				E51B26261F528F53008A3EC2 /* hozon.jpg in Resources */,
 				E51B261E1F51E0E7008A3EC2 /* nyuryoku05.jpg in Resources */,
 				E51B26241F5285D0008A3EC2 /* graph04.jpg in Resources */,
+				E5CFE6651F5805C7003515EF /* hosu03.jpg in Resources */,
 				E5BA4D4A1E0E4DAB0068565F /* hozonnCell.xib in Resources */,
 				E56A59B91F4A84BF00AA731E /* kenkou02.png in Resources */,
+				E5CFE66B1F582509003515EF /* logo02.png in Resources */,
 				E56A59BC1F4A84DD00AA731E /* kenkou01.png in Resources */,
+				E5CFE6631F58053E003515EF /* hosu02.jpg in Resources */,
 				E50654971E0FBBA5003B921C /* kenkou002.png in Resources */,
 				E58C89AC1F544E360026400D /* hosuCellTableViewCell.xib in Resources */,
 				E51B26201F52831D008A3EC2 /* graph02.jpg in Resources */,

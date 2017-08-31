@@ -38,6 +38,9 @@ class hosuViewController: UIViewController {
         
         
     }
+    @IBAction func back(){
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func ok(){
         
@@ -48,7 +51,7 @@ class hosuViewController: UIViewController {
         allData.hosuData = self.steps
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+        dateFormatter.dateFormat = "yyyy/MM/dd"
         allData.date = dateFormatter.string(from: Date())
         
         
@@ -63,11 +66,14 @@ class hosuViewController: UIViewController {
             
             
         }
+        
+    
 
     func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
 
 }

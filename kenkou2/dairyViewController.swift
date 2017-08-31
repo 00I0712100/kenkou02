@@ -11,7 +11,7 @@ import RealmSwift
 
 
 
-class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+class dairyViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var syokujiimage: UIImageView!
@@ -57,7 +57,7 @@ class dairyViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.delegate = self
+       // imagePickerController.delegate = self
         table.dataSource = self
         table.delegate = self
         table.registerCell(type: hozonnCell.self)

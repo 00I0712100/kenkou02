@@ -10,8 +10,8 @@ import UIKit
 
 class hosuCellTableViewCell: UITableViewCell {
     
-    @IBOutlet var label1: UILabel!
-    @IBOutlet var label2: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var hosuLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

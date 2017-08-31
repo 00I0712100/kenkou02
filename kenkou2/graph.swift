@@ -295,6 +295,12 @@ class Graph: UIView {
                 
                 //円をつくる
                 circlePoint = CGPoint(x: CGFloat(count+1) * memoriMargin, y: nextY)
+                
+                let label: UILabel = UILabel(frame: CGRect(x: circlePoint.x - 50, y: circlePoint.y - 10, width: 100, height: 50)) // 体重の文字の一はここのxとyをいじる
+                label.text = "\(graphDatas[count + 1])kg"
+                label.textColor = UIColor.white
+                self.addSubview(label)
+                
                 myCircle = UIBezierPath(arcCenter: circlePoint,
                                         // 半径
                     radius: circleWidth,

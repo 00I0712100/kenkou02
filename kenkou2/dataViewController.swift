@@ -33,11 +33,13 @@ class dataViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //各セルの要素を設定する
     func tableView(_ table: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        
+        
         // tableCell の ID で UITableViewCell のインスタンスを生成
-        let cell = table.dequeueReusableCell(withIdentifier: "tableCell")
-        // cell?.textLabel?.text = "テスト"
+        let cell = table.dequeueCell(type: hosuCellTableViewCell.self, indexPath: indexPath)        // cell?.textLabel?.text = "テスト"
         data = displayTextArray[indexPath.row]
-        cell?.textLabel?.text = data.hosuData
+        cell?.hosuLabel?.text = data.hosuData
+        cell?.dateLabel?.text = data.date
         
         
         
@@ -53,6 +55,9 @@ class dataViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         table.reloadData()
         
+    }
+    @IBAction func back(){
+        dismiss(animated: true, completion: nil)
     }
 
 

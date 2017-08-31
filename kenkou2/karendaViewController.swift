@@ -57,6 +57,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
          super.viewWillAppear(animated)
+        self.showCalories(date: Date())
          
     }
 
@@ -76,18 +77,20 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         date = dateFormatter.string(from: dayView.date!) //追加
         
 
-        syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin(date: dayView.date!)).filter("hiduke <=%d" , dayFinishi(date: dayView.date!)).first
-        
-        print(syokuji)
+//        syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin(date: dayView.date!)).filter("hiduke <=%d" , dayFinishi(date: dayView.date!)).first
+//        
+//        print(syokuji)
+        self.showCalories(date: dayView.date!)
         
     }
-    func dayBegin(date: Date) -> NSDate {
-        let calendar = Calendar.current
-        let component = calendar.dateComponents([.year, .day, .month], from: date)
-        let year = component.year!
-        let month = String(format: "%02d", component.month!)
-        let day = String(format: "%02d", component.day!)
-        
+//    func dayBegin(date: Date) -> NSDate {
+//        let calendar = Calendar.current
+//        let component = calendar.dateComponents([.year, .day, .month], from: date)
+//        let year = component.year!
+//        let month = String(format: "%02d", component.month!)
+//        let day = String(format: "%02d", component.day!)
+    func showCalories(date: Date) {
+    
         let asaKarori: Int = syokuji?.asa.reduce(0) { (result, syokuhin) -> Int in
             return result + syokuhin.calory
         } ?? 0
@@ -101,6 +104,15 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
             return Result + Syokuhin.calory
         } ?? 0
         yoru.text = String(describing: yoruKarori)
+    }
+    
+        func dayBegin(date: Date) -> NSDate {
+                    let calendar = Calendar.current
+                    let component = calendar.dateComponents([.year, .day, .month], from: date)
+                    let year = component.year!
+                    let month = String(format: "%02d", component.month!)
+                    let day = String(format: "%02d", component.day!)
+
         
         
         let formatter = DateFormatter()
@@ -108,6 +120,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         formatter.locale = Locale(identifier: "ja_JP")
         return formatter.date(from: "\(year)/\(month)/\(day) 00:00:00")! as NSDate
     }
+
     
     func dayFinishi(date: Date) -> NSDate {
         let calendar = Calendar.current

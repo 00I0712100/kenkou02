@@ -10,7 +10,7 @@
 import UIKit
 import RealmSwift
 
-class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate {
+class diaryViewController3: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var syokujiimage: UIImageView!
     @IBOutlet weak var table: UITableView!
@@ -69,7 +69,7 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.delegate = self
+        //imagePickerController.delegate = self
         table.dataSource = self
         table.delegate = self
         table.registerCell(type: hozonnCell.self)
