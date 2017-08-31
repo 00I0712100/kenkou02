@@ -107,6 +107,7 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
                 self.showAlert(syokuji: syokuji)
                 
             }
+            
         }
         
     }
@@ -118,11 +119,11 @@ class hozonnViewController: UIViewController,UITextFieldDelegate {
                 title: "OK",
                 style:.cancel,
                 handler: {action in
-                    //self.dismiss(animated: true, completion: nil)
-                    let storyboard: UIStoryboard = self.storyboard!
-                    let nextView = storyboard.instantiateViewController(withIdentifier: "nextView") as! PageViewController
-                    nextView.syokuji = syokuji
-                    self.present(nextView, animated: true, completion: nil)
+//                    //self.dismiss(animated: true, completion: nil)
+//                    let storyboard: UIStoryboard = self.storyboard!
+//                    let nextView = storyboard.instantiateViewController(withIdentifier: "nextView") as! PageViewController
+//                    nextView.syokuji = syokuji
+                    self.dismiss(animated: true, completion: nil)
                     NSLog("OKボタンが押されました!")
                     //self.dismiss(animated: true, completion: nil)
             }

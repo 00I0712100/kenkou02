@@ -97,6 +97,10 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
     @IBAction func select(){
         selectImage()
     }
+    @IBAction func addButton(){
+        delegate?.presectAddView(index: 1)
+    }
+
     
     private func selectImage() {
         let alertController = UIAlertController(title: "画像を選択", message: nil, preferredStyle: .actionSheet)
@@ -182,7 +186,10 @@ class diaryViewController2: UIViewController, UIImagePickerControllerDelegate,UI
     @IBAction func kanryou(){
     }
     @IBAction func saveButtonPushed(_ sender: UIButton) {
-        
+        try! realm.write {
+            self.syokuji.hiruImage = self.syokujiimage.image
+            realm.add(self.syokuji, update: true)
+        }
         
         
         

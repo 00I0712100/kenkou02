@@ -100,6 +100,10 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
     @IBAction func select(){
         selectImage()
     }
+    @IBAction func addButton(){
+        delegate?.presectAddView(index: 2)
+    }
+
     
     private func selectImage() {
         let alertController = UIAlertController(title: "画像を選択", message: nil, preferredStyle: .actionSheet)
@@ -215,7 +219,11 @@ class diaryViewController3: UIViewController, UIImagePickerControllerDelegate,UI
     
     @IBAction func saveButtonPushed(_ sender: UIButton) {
         
-        
+        let realm = try! Realm()
+        try! realm.write {
+            self.syokuji.yoruImage = self.syokujiimage.image
+            realm.add(self.syokuji, update: true)
+        }
         
         
         //画面遷移して前の画面に戻る

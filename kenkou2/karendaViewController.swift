@@ -54,6 +54,11 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -156,7 +161,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         
     }
 
-    
+   
     @IBAction func writeButtonPushed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "toDiary", sender: nil)
     }

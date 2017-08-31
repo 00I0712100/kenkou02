@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JBDatePicker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,12 +42,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4A41CA7A704BFCAE9A8B53331DD527C4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>769E7CCE95260B0C8AA546FF1301F71A</key>
+		<key>86B72B9C760A860D581AAF36A4BA6872</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,12 +52,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A438BA5BEB8FF37BCAC3A19480B3BCF0</key>
+		<key>E0F2DDFC65C20F3C7235B0B5BA321AEC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2C097F4B9A50C935E08B5563FD31FDC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>F2F4169B8A9773870FF80E826EB98651</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F307B842FF76B2DE6C55DB67C0885325</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -459,6 +459,14 @@
                                 <color key="textColor" red="0.45098039220000002" green="0.45098039220000002" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6f-wl-F3n">
+                                <rect key="frame" x="16" y="10" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonPushed:" destination="bTl-fA-rh8" eventType="touchUpInside" id="3og-es-XDa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -608,7 +616,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="1" id="Y2U-fi-0df"/>
+                                    <action selector="addButton" destination="DHA-VM-jo6" eventType="touchUpInside" id="ONq-JK-u5u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -650,7 +658,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Vw-bk-oSv" id="l0F-YB-ZEt">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -705,7 +713,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="2" id="Txo-RT-5V1"/>
+                                    <action selector="addButton" destination="meJ-wn-aOp" eventType="touchUpInside" id="dQx-Zr-MTp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlX-pf-IXm">
@@ -761,7 +769,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDk-2L-hXS" id="Ira-xV-xEa">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -775,7 +783,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="M9l-nj-0Fg" kind="modal" identifier="3" id="Y6T-Yq-Nne"/>
+                                    <action selector="addButton" destination="Za8-zv-tHe" eventType="touchUpInside" id="jo8-C2-f63"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiH-ge-jc8">
@@ -850,7 +858,7 @@
         <!--Hozonn View Controller-->
         <scene sceneID="zP6-Rh-slq">
             <objects>
-                <viewController id="M9l-nj-0Fg" customClass="hozonnViewController" customModule="kenkou2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="hozon" id="M9l-nj-0Fg" customClass="hozonnViewController" customModule="kenkou2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HKL-xL-BWB"/>
                         <viewControllerLayoutGuide type="bottom" id="Zwb-CS-csn"/>
@@ -913,7 +921,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="ccR-ic-84i"/>
-        <segue reference="Y6T-Yq-Nne"/>
         <segue reference="AJS-Og-H8Q"/>
     </inferredMetricsTieBreakers>
 </document>

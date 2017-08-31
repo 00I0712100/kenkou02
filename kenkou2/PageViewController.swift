@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol PageViewControllerDelegate: class {
     func dismiss()
+    func presectAddView(index: Int)
     func presentImagePicker(sourceType: UIImagePickerControllerSourceType, index: Int)
 }
 
@@ -104,7 +105,11 @@ class PageViewController: UIViewController, PageViewControllerDelegate, UIImageP
         }
          self.dismiss(animated: true, completion: nil)
     }
-    
+    func presectAddView(index: Int) {
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "hozon") as! hozonnViewController
+        controller.atai = index + 1
+        self.present(controller, animated: true, completion: nil)
+    }
     /*
      // MARK: - Navigation
      
