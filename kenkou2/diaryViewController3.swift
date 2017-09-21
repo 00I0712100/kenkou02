@@ -260,9 +260,6 @@ class diaryViewController3: UIViewController, UITableViewDataSource,UITableViewD
             realm.add(self.syokuji, update: true)
         }
         
-        
-        //画面遷移して前の画面に戻る
-        self.dismiss(animated: true, completion: nil)
         delegate?.dismiss()
     }
 
