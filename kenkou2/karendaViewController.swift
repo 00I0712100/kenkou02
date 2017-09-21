@@ -106,6 +106,8 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
             return Result + Syokuhin.calory
         } ?? 0
         yoru.text = String(describing: yoruKarori)
+
+        goukei.text = String(asaKarori + hiruKarori + yoruKarori)
     }
     
         func dayBegin(date: Date) -> NSDate {
@@ -130,23 +132,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         let year = component.year!
         let month = String(format: "%02d", component.month!)
         let day = String(format: "%02d", component.day!)
-        let asaKarori: Int = syokuji?.asa.reduce(0) { (result, syokuhin) -> Int in
-            return result + syokuhin.calory
-        } ?? 0
-        asa.text = String(describing: asaKarori)
-        let hiruKarori: Int = syokuji?.hiru.reduce(0){ (Result, Syokuhin) -> Int in
-            return Result + Syokuhin.calory
-        } ?? 0
-        hiru.text = String(describing: hiruKarori)
-        let yoruKarori: Int = syokuji?.yoru.reduce(0){ (Result, Syokuhin) -> Int in
-            return Result + Syokuhin.calory
-        } ?? 0
-        yoru.text = String(describing: yoruKarori)
-        
-        
-        goukei.text = String(asaKarori + hiruKarori + yoruKarori)
 
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
         formatter.locale = Locale(identifier: "ja_JP")
