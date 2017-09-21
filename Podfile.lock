@@ -1,13 +1,13 @@
 PODS:
-  - Charts (3.0.2):
-    - Charts/Core (= 3.0.2)
-  - Charts/Core (3.0.2)
+  - Charts (3.0.3):
+    - Charts/Core (= 3.0.3)
+  - Charts/Core (3.0.3)
   - JBDatePicker (1.2.3)
-  - Realm (2.8.1):
-    - Realm/Headers (= 2.8.1)
-  - Realm/Headers (2.8.1)
-  - RealmSwift (2.8.1):
-    - Realm (= 2.8.1)
+  - Realm (2.10.1):
+    - Realm/Headers (= 2.10.1)
+  - Realm/Headers (2.10.1)
+  - RealmSwift (2.10.1):
+    - Realm (= 2.10.1)
 
 DEPENDENCIES:
   - Charts
@@ -15,10 +15,10 @@ DEPENDENCIES:
   - RealmSwift
 
 SPEC CHECKSUMS:
-  Charts: 236d6ccdd0ce6feae151d89e829a7397381a21fd
+  Charts: bcde37724c161958c1438dd4883971fcb2d50c06
   JBDatePicker: 7130ca86cb2ba1e49d5050b311ba5a14968c18b9
-  Realm: 2627602ad6818451f0cb8c2a6e072f7f10a5f360
-  RealmSwift: 4764ca7657f2193c256fb032c0b123926f70dbcd
+  Realm: fc7a317a5c2c9ba91f5f235ede4e2ea76e9eba0c
+  RealmSwift: 505ed6c15942a2e76f5cfa78a8667cfa997ee75b
 
 PODFILE CHECKSUM: 5c09f7868f663e0cf14d822268b80737c1f0c77c
 

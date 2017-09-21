@@ -86,7 +86,40 @@ class diaryViewController3: UIViewController, UITableViewDataSource,UITableViewD
         }
         }
     override func viewWillAppear(_ animated: Bool) {
-        
+        self.syokuji = { () -> Syokuji in
+            
+            let realm = try! Realm()
+            
+            func dayBegin() -> NSDate {
+                let date = Date()
+                let calendar = Calendar.current
+                let component = calendar.dateComponents([.year, .day, .month], from: date)
+                let year = component.year!
+                let month = String(format: "%02d", component.month!)
+                let day = String(format: "%02d", component.day!)
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd hh:mm:ss"
+                formatter.locale = Locale(identifier: "ja_JP")
+                return formatter.date(from: "\(year)/\(month)/\(day) 00:00:00")! as NSDate
+            }
+            func dayFinishi() -> NSDate {
+                let date = Date()
+                let calendar = Calendar.current
+                let component = calendar.dateComponents([.year, .day, .month], from: date)
+                let year = component.year!
+                let month = String(format: "%02d", component.month!)
+                let day = String(format: "%02d", component.day!)
+                
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
+                formatter.locale = Locale(identifier: "ja_JP")
+                return formatter.date(from: "\(year)/\(month)/\(day) 23:59:59")! as NSDate
+            }
+            
+            return realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin()).filter("hiduke <=%d" ,dayFinishi()).first ?? Syokuji()
+            
+        }()
         
         
         var sum: Int = 0
@@ -94,6 +127,8 @@ class diaryViewController3: UIViewController, UITableViewDataSource,UITableViewD
             sum = sum + obj.calory
         }
         goukei.text = String(sum)
+        
+        table.reloadData()
     }
     
     

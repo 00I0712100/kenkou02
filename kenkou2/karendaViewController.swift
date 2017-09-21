@@ -19,6 +19,8 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
     @IBOutlet var asa: UILabel!
     @IBOutlet var hiru: UILabel!
     @IBOutlet var yoru: UILabel!
+    @IBOutlet var goukei: UILabel!
+    
     
     let realm = try! Realm()
     
@@ -77,7 +79,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
         date = dateFormatter.string(from: dayView.date!) //追加
         
 
-//        syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin(date: dayView.date!)).filter("hiduke <=%d" , dayFinishi(date: dayView.date!)).first
+
 //        
 //        print(syokuji)
         self.showCalories(date: dayView.date!)
@@ -90,7 +92,7 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
 //        let month = String(format: "%02d", component.month!)
 //        let day = String(format: "%02d", component.day!)
     func showCalories(date: Date) {
-    
+        syokuji = realm.objects(Syokuji.self).filter("hiduke >=%d" , dayBegin(date: date)).filter("hiduke <=%d" , dayFinishi(date: date)).first
         let asaKarori: Int = syokuji?.asa.reduce(0) { (result, syokuhin) -> Int in
             return result + syokuhin.calory
         } ?? 0
@@ -140,6 +142,9 @@ class karendaViewController: UIViewController, JBDatePickerViewDelegate {
             return Result + Syokuhin.calory
         } ?? 0
         yoru.text = String(describing: yoruKarori)
+        
+        
+        goukei.text = String(asaKarori + hiruKarori + yoruKarori)
 
         
         let formatter = DateFormatter()

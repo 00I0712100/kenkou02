@@ -120,6 +120,7 @@ class dairyViewController: UIViewController,UITableViewDataSource, UITableViewDe
         }
             goukei.text = String(sum)
         
+        table.reloadData()
     }
     
     

@@ -393,6 +393,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="357"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="b"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="朝ごはん" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LaP-cj-aaT">
                                 <rect key="frame" x="0.0" y="409" width="84" height="59"/>
@@ -463,6 +464,7 @@
                     <connections>
                         <outlet property="asa" destination="Jxu-3Q-wj9" id="l1i-lo-Fpc"/>
                         <outlet property="datePicker" destination="I1k-CU-bgO" id="K28-aT-MKR"/>
+                        <outlet property="goukei" destination="4eZ-P0-4bg" id="1dG-WA-G88"/>
                         <outlet property="hidukelabel" destination="WVz-hl-yli" id="51m-5D-kLF"/>
                         <outlet property="hiru" destination="Pre-uy-xWV" id="4Tl-43-agM"/>
                         <outlet property="yoru" destination="kuS-M0-wYl" id="9c1-93-VpL"/>
