@@ -12,4 +12,10 @@ import RealmSwift
 class  AllData: Object {
     dynamic var hosuData: String = ""
     dynamic var date: String = ""
+    
+    override static func primaryKey() -> String {
+        
+        return "date"
+        
+    }
 }

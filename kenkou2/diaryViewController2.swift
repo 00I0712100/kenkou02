@@ -228,7 +228,7 @@ class diaryViewController2: UIViewController,UITableViewDataSource,UITableViewDe
         
         
         //画面遷移して前の画面に戻る
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
         delegate?.dismiss()
     }
     

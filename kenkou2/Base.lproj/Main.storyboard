@@ -666,7 +666,6 @@
                                 <connections>
                                     <action selector="kanryou" destination="meJ-wn-aOp" eventType="touchUpInside" id="uad-dI-VQt"/>
                                     <action selector="saveButtonPushed:" destination="meJ-wn-aOp" eventType="touchUpInside" id="HJE-j1-LoE"/>
-                                    <segue destination="AUx-uc-HXv" kind="modal" id="ipc-c4-VBY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HcU-xc-4xO">
@@ -788,7 +787,6 @@
                                 <connections>
                                     <action selector="kanryou" destination="Za8-zv-tHe" eventType="touchUpInside" id="q7O-YM-n0p"/>
                                     <action selector="saveButtonPushed:" destination="Za8-zv-tHe" eventType="touchUpInside" id="9VJ-GD-1ZB"/>
-                                    <segue destination="AUx-uc-HXv" kind="modal" id="ccR-ic-84i"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="食品名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YjZ-Vw-aQ0">
@@ -914,7 +912,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="ipc-c4-VBY"/>
-    </inferredMetricsTieBreakers>
 </document>
